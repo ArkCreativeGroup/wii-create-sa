@@ -14,7 +14,7 @@
                 <div class="card__content--head">
                     <h3 class="card__content--title">{{ entry.title }}</h3>
                     {% if has-price-tag == true %}
-                    <span class="tag">₦ {{ entry.price }}</span>
+                    <span class="tag">R {{ entry.price }}</span>
                     {% endif %}
                 </div>
                 {% if page.url == '/'%}
@@ -26,7 +26,7 @@
                 {% if entry.text %}
                 {% if has-price == true %}
                     <br><br>
-                    <span class="">Starting from <span class="fw-medium">₦7,499 / 100 pieces</span> </span>
+                    <span class="">Starting from <span class="fw-medium">R7,499 / 100 pieces</span> </span>
                 {% endif %}
                 </p>
                 {% endif %}

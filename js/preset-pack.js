@@ -77,10 +77,10 @@ simpleCart.bind( 'update' , function(){
     const grandtotalAmount = totalAmount + taxAmount;
     
     // console.log( simpleCart.total() + (parseInt( purchaseItemPrice )) ); 
-    $("#total-amount").text( '₦' + parseInt(totalAmount).toLocaleString());
+    $("#total-amount").text( 'R' + parseInt(totalAmount).toLocaleString());
 
-    $("#tax-amount").text( '₦' + parseInt(taxAmount).toLocaleString());
-    $("#grandtotal-amount").text('₦' + parseInt(grandtotalAmount).toLocaleString());
+    $("#tax-amount").text( 'R' + parseInt(taxAmount).toLocaleString());
+    $("#grandtotal-amount").text('R' + parseInt(grandtotalAmount).toLocaleString());
   });
 
 // simpleCart.grandTotal();

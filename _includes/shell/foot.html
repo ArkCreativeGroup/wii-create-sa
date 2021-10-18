@@ -117,7 +117,7 @@ buildCart({
     },
     taxRate: 0.7,
     shippingFlatRate: 1500,
-    currency: "NGN",
+    currency: "ZAR",
     cartStyle: "table",
     cartColumns: [
       { view: function(item, column){
@@ -141,7 +141,7 @@ buildCart({
 
 
 buildCart.currency({
-  code: "NGN",
+  code: "ZAR",
   name: "Naira",
   symbol: "&#8358;",
   delimiter: ",",
@@ -163,7 +163,7 @@ buildCart.ready(function() {
     window.localStorage.setItem("presetTotalprice", presetTotal);
     let presetItem = localStorage.getItem("presetTotalprice");
     
-    var showfinal = $('#buildgrandTotal').text("₦" + parseInt( presetItem ).toLocaleString());
+    var showfinal = $('#buildgrandTotal').text("R" + parseInt( presetItem ).toLocaleString());
 
     localStorage.setItem("presetFinalfinal", showfinal);
 
@@ -364,7 +364,7 @@ bulkCart({
     },
     taxRate: 0.07,
     shippingFlatRate: 1500,
-    currency: "NGN",
+    currency: "ZAR",
     cartStyle: "table",
     cartColumns: [
       { view: function(item, column){
@@ -392,7 +392,7 @@ bulkCart({
   });
 
   bulkCart.currency({
-  code: "NGN",
+  code: "ZAR",
   name: "Naira",
   symbol: "&#8358;",
   delimiter: ",",
