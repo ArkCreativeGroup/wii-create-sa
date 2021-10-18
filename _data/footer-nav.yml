@@ -1,0 +1,25 @@
+footer-list:
+  - name: Order
+    list:
+      - title: Build a Pack
+        url: /build-your-pack
+      - title: Prebuilt Packs
+        url: /get-started
+      - title: Bulk Orders
+        url: /bulk-order
+  - name: About Wii
+    list:
+      - title: Why Wii?
+        url: /why-wii
+      - title: Contact Us
+        url: /contact-us
+      - title: Partnerships
+        url: /partnerships
+  - name: Help
+    list:
+      - title: Shipping & Delivery
+        url: /shipping-delivery
+      - title: FAQs
+        url: /faq
+      - title: API (Coming Soon 🥳)
+        url: '#'

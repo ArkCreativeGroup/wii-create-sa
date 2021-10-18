@@ -1,0 +1,222 @@
+{%- if page.title == 'signup' -%}
+<section>
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <div class="tx-c mb-20 px-10">
+            <h1 class="f-21 mb-30">Make Payments <br><span class="co-primary">However, Whenever!</span></h1>
+            <p class="co-codegray">Get started sending, receiving, spending and paying bills with just your phone
+                number.</p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi" placeholder="Enter Phone Number" type="text"
+                            name="input-4" autofocus/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Phone Number</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                    <div class="py-10">
+                        <p class="co-branddark">Ensure you have access to this number.</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn--standard--full">GET STARTED</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="tx-c py-20">
+        <p class="p-content">By clicking on Get Started, you agree to our <br> <a class="co-primary" href=""> Terms &
+                Conditions</a></p>
+    </div>
+</section>
+
+{%- elsif page.title == 'verification' -%}
+<section>
+
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <a class="co-primary link--wtth-icons mb-15" href="">
+            <svg class="mr-10" width="14" height="12">
+                <use href="/uploads/icon-sprite.svg#back-icon"></use>
+            </svg>Back
+        </a>
+        <div class="tx-c mb-20 px-10">
+            <h1 class="f-21 mb-30">Account Validation</h1>
+            <p class="co-codegray p-content">Enter the 6-digit confirmation code sent to 0810-089-5940 via SMS. </p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi" placeholder="Enter OTP" type="text"
+                            name="input-4" autofocus/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">OTP</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="tx-c">
+                    <p class="mb-20">Resend code in <span class="co-primary">(00:59)</span></p>
+                    <p class="mb-40">Didn’t get code? <a href="#verification-modal" uk-toggle class="co-primary">Click Here</a></p>
+                    <button class="btn btn--standard--full">CONTINUE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% include components/modal.html modal="verification-modal" %}
+
+{%- elsif page.title == 'password' -%}
+<section>
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <a class="co-primary link--wtth-icons mb-15" href="">
+            <svg class="mr-10" width="14" height="12">
+                <use href="/uploads/icon-sprite.svg#back-icon"></use>
+            </svg>Back
+        </a>
+        <div class="tx-c px-10">
+            <h1 class="f-21 mb-20">Create Password</h1>
+            <p class="co-codegray p-content">Create a password for your <br> Eyowo account. </p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi" placeholder="Enter password" type="password"
+                            name="input-4" autofocus/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Password</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                    <div class="d-flx-space">
+                        <p class="mt-10 f-12 co-codegray">Password strength</p>
+                        <div class="strength-bar">
+                            <span style="width: 50%" class="strength-bar__progress"></span>
+                        </div>
+                    </div>
+
+                    <span class="input input--hoshi mt-20">
+                        <input class="input__field input__field--hoshi" placeholder="Confirm password" type="password"
+                            name="input-4" />
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Confirm password</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="tx-c">
+
+                    <button class="btn btn--standard--full">CONTINUE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{%- elsif page.title == 'recovery' -%}
+<section>
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <a class="co-primary link--wtth-icons mb-15" href="">
+            <svg class="mr-10" width="14" height="12">
+                <use href="/uploads/icon-sprite.svg#back-icon"></use>
+            </svg>Back
+        </a>
+        <div class="tx-c px-10">
+            <h1 class="f-21 mb-20">Recovery Method</h1>
+            <p class="co-codegray p-content">Provide another active phone number OR email address incase you forget your
+                password.</p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi"
+                            placeholder="Enter phone number or email address" type="text" name="input-4" autofocus/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Phone or Email</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="tx-c">
+                    <button class="btn btn--standard--full">CONTINUE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{%- elsif page.title == 'forgot-password' -%}
+<section>
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <a class="co-primary link--wtth-icons mb-15" href="">
+            <svg class="mr-10" width="14" height="12">
+                <use href="/uploads/icon-sprite.svg#back-icon"></use>
+            </svg>Back
+        </a>
+        <div class="tx-c px-10">
+            <h1 class="f-21 mb-20">Recovery Method</h1>
+            <p class="co-codegray p-content">Enter your recovery phone number or email address on which you will receive an OTP.</p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi"
+                            placeholder="Enter recovery number or email address" type="text" name="input-4" />
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Recovery method</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="tx-c">
+                    <p class="mb-20">Forgot your recovery method or you <br>haven't set one?</p>
+                    <p class="mb-40"><a href="" class="co-primary"> Contact Support</a></p>
+                    <button class="btn btn--standard--full">CONTINUE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% else %}
+<section>
+    <div class="card card--padded-30 m-h-520 d-flx flex-col">
+        <a class="co-primary link--wtth-icons mb-15" href="">
+            <svg class="mr-10" width="14" height="12">
+                <use href="/uploads/icon-sprite.svg#back-icon"></use>
+            </svg>Back
+        </a>
+        <div class="tx-c px-10">
+            <h1 class="f-21 mb-20">
+                <svg class="mr-10" width="98" height="30">
+                    <use href="/uploads/icon-sprite.svg#password-logo"></use>
+                </svg>
+            </h1>
+            <p class="co-codegray p-content">Welcome Back, Jaykay</p>
+            <p class="co-codegray p-content">Enter the password for <br><b>0810-089-5940</b></p>
+        </div>
+        <form class="flex-auto d-flx">
+            <div class="d-flx j-c-sb flex-col flex-auto pb-10">
+                <div class="d-flx flex-col j-c-c flex-auto">
+                    <span class="input input--hoshi input__with-errors">
+                        <input class="input__field input__field--hoshi"
+                            placeholder="Enter password" type="text" name="input-4" autofocus/>
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                            <span class="input__label-content input__label-content--hoshi">Password</span>
+                            <span class="input__error-message">*error message goes here</span>
+                        </label>
+                    </span>
+                </div>
+                <div class="tx-c">
+                    <p class="mb-45 f-16"><a href="" class="co-primary">Forgot password?</a></p>
+                    <button class="btn btn--standard--full">CONTINUE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{%-endif-%}

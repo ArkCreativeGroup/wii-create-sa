@@ -1,0 +1,55 @@
+<ul class="grid-wrapper {{ cardGrid }}">
+    {% for entry in card %}
+    {% if entry.title == 'Build your own pack' %}
+        {% assign pack = 'packs' %}
+    {% else %}
+        {% assign pack = 'pieces' %}
+    {% endif %}
+    <li class="card {{ cardType }}">
+        <div class="card__image">
+            <img src="{{ entry.featured_image_path.first }}" alt="{{ entry.title }}">
+        </div>
+        <div class="card__content">
+            <div class="card__content--body">
+                <div class="card__content--head">
+                    <h3 class="card__content--title">{{ entry.title }}</h3>
+                    {% if has-price-tag == true %}
+                    <span class="tag">₦ {{ entry.price }}</span>
+                    {% endif %}
+                </div>
+                {% if page.url == '/'%}
+                    {% assign description = entry.short-description %}
+                {% else %}
+                    {% assign description = entry.description %}
+                {% endif %}
+                <p class="card__content--text lh-25">{{ description | truncatewords: words }}
+                {% if entry.text %}
+                {% if has-price == true %}
+                    <br><br>
+                    <span class="">Starting from <span class="fw-medium">₦7,499 / 100 pieces</span> </span>
+                {% endif %}
+                </p>
+                {% endif %}
+
+                {% if has-list == true %}
+                    {% if entry.options %}
+                    {% assign lists = entry.options %}
+                    {% include components/list-mark.html %}
+                    {% endif %}
+                {% endif %}
+                
+            </div>
+            <div class="card__content--footer">
+                {% if has-price == true %}
+                    <a class="card__content--link" href="">Shop  {{ entry.title }}</a>
+                {% else %}
+                    <a class="btn btn--secondary" href="{{ entry.url }}">Order Now </a>
+                    <p class="co-codegray text-small-auto">Min. {{ entry.quantity.first }} {{ pack }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+

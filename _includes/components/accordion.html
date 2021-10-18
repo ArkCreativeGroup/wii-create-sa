@@ -1,0 +1,11 @@
+<ul class="accordion" uk-accordion>
+    {% for entry in page.faqs %}
+    <li>
+        <a class="uk-accordion-title text-normal-auto fw-medium co-codegray" href="#">{{ entry.title }}</a>
+        <div class="content uk-accordion-content">
+            <p>{{ entry.description }}</p>
+        </div>
+    </li>
+    {% endfor%}
+
+</ul>

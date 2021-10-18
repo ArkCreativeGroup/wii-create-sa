@@ -1,0 +1,40 @@
+%modalspace
+    padding-left: 45px
+    padding-right: 45px
+    @media #{ $smalldown}
+        padding-left: 20px
+        padding-right: 20px
+    
+.modal
+    &--body
+        min-height: 600px
+        border-radius: 10px
+        overflow: hidden
+        &.small
+            width: 550px
+        &.big
+            width: 1000px
+    &--head
+        @extend %modalspace
+        position: relative
+        padding-top: 45px
+        margin-bottom: 40px
+        @media #{ $smalldown}
+            padding-top: 20px
+        &__wrapper
+            position: relative
+            padding-right: 36px
+        &__close
+            position: absolute
+            right: 0
+            top: 0
+            color: $secondarycolor
+            &:hover
+                color: $primarycolor
+    &--content
+        @extend %modalspace
+        padding-bottom: 50px
+    &--foot
+        @extend %modalspace
+        padding-top: 45px
+        padding-bottom: 45px

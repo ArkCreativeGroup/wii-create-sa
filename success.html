@@ -1,0 +1,25 @@
+---
+title: Checkout
+description:
+sitemap: false
+layout: default
+---
+
+<div class="wrapper--x merch-banner">
+    <div class="sub-header tx-c mb-120">
+        <h2 class="font-big-auto co-secondary">Checkout</h2>
+    </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    bulkCart.empty();
+    buildCart.empty();
+    window.localStorage.removeItem("purchase_item")
+    window.localStorage.removeItem("purchase_itemImg")
+    window.localStorage.removeItem("purchase_amount")
+    window.localStorage.removeItem("purchase_qty")
+  });
+</script>
+
+

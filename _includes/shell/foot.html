@@ -1,0 +1,561 @@
+{% if page.url == "/bulk-order/products" or page.url == "/build-your-pack/products" %}
+
+{% else %}
+<script src="//code.tidio.co/wh40sbdjegpf9yq1gywujqd4b1zgbgpa.js"></script>
+
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/TweenMax.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/MotionPathPlugin.min.js"></script>
+
+<script src="{{ site.url }}/js/jquery-2.2.4.min.js"></script>
+<script src="{{ site.url }}/js/simpleCart.js"></script>
+<!-- <script async src="{{ site.url }}/js/main.js"></script> -->
+<script async src="{{ site.url }}/js/responsive-menu.js"></script>
+
+<!-- {% if page.url contains '/products/' %}
+{% endif %}
+
+{% if page.url == '/checkout/' %}
+{% endif %} -->
+<script async src="{{ site.url }}/js/style-picker.js"></script>
+<script async src="{{ site.url }}/js/add-to-cart.js"></script>
+
+
+<script src="{{ site.url }}/js/scrollIt.min.js"></script>
+<script src="{{ site.url }}/js/preset-pack.js"></script>
+
+<!-- <script src="{{ site.url }}/js/main.js"></script> -->
+
+
+
+<script>
+  $(".width").html($(window).width());
+  function process(){ 
+    if( $(window).width() > 600){
+      $("body").removeClass("mobile").addClass("desktop");
+      
+    }else{
+      $("body").removeClass("desktop").addClass("mobile");
+    }
+  }
+
+  process()
+
+  $(function() {
+
+  $(window).resize(function(){
+      process()
+  });
+
+  $(document).on('mouseover', 'body.mobile .sub-nav-toggle',function(e){
+      // alert("hover");
+      $(".sub-nav-dropdown").addClass("opendrop"),
+      $(".sub-nav-dropdown").removeClass("opendrop")
+  }); 
+
+  $(document).on('click', 'body.desktop .sub-nav-toggle',function(e){
+    $(".sub-nav-dropdown").toggleClass("opendrop")
+    //       alert("click");
+    // console.log("click");
+      }); 
+  });
+
+
+gsap.registerPlugin(MotionPathPlugin);
+
+gsap.to("#merch1", {rotation: 52, duration: 1});
+gsap.to("#merch2", {rotation: 30, duration: 1});
+gsap.to("#merch3", {rotation: 15, duration: 1});
+gsap.to("#merch4", {rotation: 0, duration: 1});
+gsap.to("#merch5", {rotation: -22, duration: 1});
+gsap.to("#merch6", {rotation: -35, duration: 1});
+gsap.to("#merch7", {rotation: -50, duration: 1});
+
+gsap.to("#merch8", {rotation: 52, duration: 1});
+gsap.to("#merch9", {rotation: 25, duration: 1});
+gsap.to("#merch10", {rotation: 8, duration: 1});
+gsap.to("#merch11", {rotation: 10, duration: 1});
+gsap.to("#merch12", {rotation: -10, duration: 1});
+gsap.to("#merch13", {rotation: -28, duration: 1});
+gsap.to("#merch14", {rotation: -50, duration: 1});
+
+
+
+//
+// Handling the menu toggle
+//
+var mobileNav = document.querySelector(".mobile-nav");
+function showmenu(x) {
+    x.classList.toggle("change");
+    mobileNav.classList.toggle("open-nav");
+};
+
+function emptyCheck1(){
+  if(buildCart.items().length == 0)
+      {
+      //No items in the cart empty-state
+      $('.buildCart_board').hide();
+      $('.buildCart_emptystate').show();
+    } else{
+      $('.buildCart_board').show();
+      $('.buildCart_emptystate').hide();
+    }
+};
+
+
+
+var buildCart  = simpleCart.copy( "buildCart" );
+
+buildCart({
+    checkout: {
+      type: "SendForm",
+      // email: "you@yours.com"
+    },
+    taxRate: 0.7,
+    shippingFlatRate: 1500,
+    currency: "NGN",
+    cartStyle: "table",
+    cartColumns: [
+      { view: function(item, column){
+        return"<img src='"+item.get('image')+"'>";
+     },
+    attr: 'image' },
+      { view: function(item, column){
+        return"<span class='"+ 'text-medium-auto' +"'>"+item.get('name')+"</span><span class='"+ 'text-small-auto d-blk' +"'>Starting at &#8358;"+item.get('price')+"</span><span class='"+ 'text-small-auto hide-in-checkout d-blk' +"'>Color: "+item.get('color')+"</span><span class='"+ 'text-small-auto hide-in-checkout d-blk' +"'>Qty per pack: 1</span>";
+     },
+    attr: "name" , label: "Name" } ,
+      // { attr: "price" , label: "Price", view: 'currency' } ,
+      // { attr: "size" , label: "Size" } ,
+      // { attr: "color" , label: "Color" } ,
+      { view: "decrement" , label: false , text: "<span class='"+ 'minusIcon' + "'></span>" } ,
+      { attr: "quantity" , label: "Qty" } ,
+      { view: "increment" , label: false , text: "<span class='"+ 'plusIcon' + "'></span>" } ,
+      // { attr: "total" , label: "SubTotal", view: 'currency' } ,
+      { view: "remove" , text: "<span class='"+ 'deleteIcon' + "'></span>" , label: false }
+    ],
+  });
+
+
+buildCart.currency({
+  code: "NGN",
+  name: "Naira",
+  symbol: "&#8358;",
+  delimiter: ",",
+  decimal: ".",
+  after: false,
+  accuracy: 0
+});
+
+
+
+buildCart.ready(function() {
+
+  function presetTotal(){
+    var qtyRat = $('#buildQuantity').val();
+    window.localStorage.setItem("presetTotalqty", qtyRat);
+    let presetItemqty = localStorage.getItem("presetTotalqty");
+    
+    var presetTotal = buildCart.total() * presetItemqty;
+    window.localStorage.setItem("presetTotalprice", presetTotal);
+    let presetItem = localStorage.getItem("presetTotalprice");
+    
+    var showfinal = $('#buildgrandTotal').text("₦" + parseInt( presetItem ).toLocaleString());
+
+    localStorage.setItem("presetFinalfinal", showfinal);
+
+    showfinal
+    
+  };
+
+  // var conceptName = $('#buildQuantity').find(":selected").val();
+  // window.localStorage.setItem('todoData', conceptName);
+  // $('#buildQuantity').val(localStorage.getItem('todoData'));
+
+  var fromCart = realated();
+
+  $('#buildQuantity').change(function(){
+    presetTotal();
+    localStorage.setItem('todoData', this.value);
+  });
+  if(localStorage.getItem('todoData')){
+      $('#buildQuantity').val(localStorage.getItem('todoData'));
+  };
+
+  function realated(){
+      if(localStorage.getItem('todoData')){
+        return localStorage.getItem('todoData')
+    } else {
+      return 25
+    }
+    ;
+  };
+
+
+
+  // console.log(presetItem);
+  function finishedTotal(){
+    // var fromCart = localStorage.getItem('todoData')
+    var resultFromcart = fromCart * buildCart.total()
+    var resultFromcartax = resultFromcart + buildCart.tax()
+    $('#presetSubtotal').text(resultFromcart);
+    return resultFromcartax
+  }
+
+  function finishedTotaltax(){
+    // var fromCart = localStorage.getItem('todoData')
+    var resultFromcart = fromCart * buildCart.total()
+    $('#presetSubtotal').text(resultFromcart);
+    return resultFromcart
+  }
+  
+  buildCart.update();
+
+  buildCart.each(function(item, x) {
+    $('.buildFormdiv').append('<input type="text" name="product-name" value="' + item.get('name') + '">');
+    $('.buildFormdiv').append('<input type="text" name="product-color" value="' + item.get('color') + '">');
+    // $('.bulkForm').append('<input type="hidden" name="' + item.get('id') + ' Size" value="' + item.get('size') + '">');
+    // $('.buildFormdiv').append('<input type="text" name="product-quantity" value="' + item.get('quantity') + '">');
+    $('.buildFormdiv').append('<input type="text" name="product-price" value="' + item.get('price') + '">');
+    $('.buildFormdiv').append('<input type="text" name="product-total" value="' + item.get('total') + '">');
+  });
+
+  $('.buildFormdiv').append('<input type="text" name="pack-size" value="' + localStorage.getItem('todoData') + '">');
+  // buildCart.taxRate(30);
+  buildCart.bind( 'afterSave' , function(){ 
+    buildCart.each( function( item ){
+      // get the shelf item and hide/show its children
+      $("#" + item.get("idem") ).find(".to-add").hide();
+      $("#" + item.get("idem") ).find(".saved").show();
+    });
+    emptyCheck1();
+    presetTotal();
+    finishedTotal();
+    finishedTotaltax();
+    console.log(finishedTotal())
+  });
+
+  buildCart.bind( 'beforeRemove' , function(){ 
+    buildCart.each( function( item ){
+      // get the shelf item and hide/show its children
+      $("#" + item.get("idem") ).find(".to-add").show();
+      $("#" + item.get("idem") ).find(".saved").hide();
+    });
+    emptyCheck1();
+  });
+
+  buildCart.bind( 'afterAdd' , function(){ 
+    emptyCheck1();
+  });
+
+
+  buildCart.bind('beforeAdd', function (item) {
+  if (buildCart.has(item)) 
+    {
+        // $("#" + item.get("idem") ).find(".item_add").hide();
+        // $("#" + item.get("idem") ).find(".saved").show();
+        alert("Already in the Cart");
+        return false;
+    }
+    emptyCheck1()
+  });
+
+  buildCart.bind( [{
+    selector: 'buildCart_shelfItem .removeItem'  , // this is the selector for the remove item link 
+    event: 'click' , // watch for click events
+    callback: function(){
+      // get the shelfItem this link is contained by
+      var shelfItem = buildCart.$(this).closest('.shelfItem'),
+        // get the UID input in the shelfItem
+        uid = shelfItem.find( ".item_idem" ).val();
+
+      buildCart.find({ idem: uid }).each(function( item ){
+        item.remove();
+      });
+    }
+  }] );
+
+
+
+
+
+  buildCart.bindOutlets({
+    totalInqty: function () {
+      return buildCart.toCurrency(buildCart.totalInqty());
+    }
+  });
+
+
+
+// console.log (selectQty);
+
+// setTimeout(() => {
+//   console.log('data', selectQty)
+// }, 5000);
+
+// buildCart.bindOutlets({
+//     // create selector that goes after the "simpleCart_"
+//     "totalInqty": {
+//       callback: function () {
+//         // return currency formatted grand total - tax
+//         return 20000;
+//       }
+//     }
+//   });
+
+      buildCart.extend({
+        totalQtty: function () {
+            return localStorage.getItem('todoData');
+          },
+        totalInqty: function () {
+            return finishedTotaltax();
+          },
+        tax: function () {
+          return finishedTotaltax() *  0.075;
+        },
+        grandTotal: function () {
+            return finishedTotal();
+          },
+      });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  <br><span class='"+ 'mr-30' +"'>Qty</span> <select class='"+ 'text-medium has-drop-icon qty-field item-size' +"'><option value='"+ '25' +"'>25</option><option value='"+ '50' +"'>50</option><option value='"+ '100' +"'>100</option></select>
+
+var bulkCart  = simpleCart.copy( "bulkCart" );
+
+function emptyCheck(){
+  if(bulkCart.items().length == 0)
+      {
+      //No items in the cart empty-state
+      $('.bulkCart_board').hide();
+      $('.bulkCart_emptystate').show();
+    } else{
+      $('.bulkCart_board').show();
+      $('.bulkCart_emptystate').hide();
+    }
+};
+
+bulkCart({
+    checkout: {
+      type: "SendForm",
+      // email: "you@yours.com"
+    },
+    taxRate: 0.07,
+    shippingFlatRate: 1500,
+    currency: "NGN",
+    cartStyle: "table",
+    cartColumns: [
+      { view: function(item, column){
+        return"<img src='"+item.get('image')+"'>";
+     },
+    attr: 'image' },
+      { view: function(item, column){
+        return"<span class='"+ 'text-medium-auto d-blk mb-5' +"'>"
+          +item.get('name')
+          +"</span><span class='"+ 'd-blk' +"'>&#8358;"+item.get('price')
+          +"</span><span class='"+ 'text-small-auto d-blk hide-in-checkout' +"'>Color: "
+          +item.get('color')+"</span><span class='"+ 'text-small-auto d-blk' +"'>Quantity: "
+          +item.get('quantity')+"</span>";
+     },
+    attr: "name" , label: "Name" } ,
+      // { attr: "price" , label: "Price", view: 'currency' } ,
+      // { attr: "size" , label: "Size" },
+      // { attr: "color" , label: "Color" },
+      // { view: "decrement" , label: false , text: "<span class='"+ 'minusIcon' + "'></span>" } ,
+      // { attr: "quantity" , label: "Qty" } ,
+      // { view: "increment" , label: false , text: "<span class='"+ 'plusIcon' + "'></span>" } ,
+      // { attr: "total" , label: "SubTotal", view: 'currency' } ,
+      { view: "remove" , text: "<span class='"+ 'deleteIcon' + "'></span>" , label: false }
+    ],
+  });
+
+  bulkCart.currency({
+  code: "NGN",
+  name: "Naira",
+  symbol: "&#8358;",
+  delimiter: ",",
+  decimal: ".",
+  after: false,
+  accuracy: 0
+});
+
+bulkCart.ready(function() {
+
+  bulkCart.each(function(item, x) {
+    $('.bulkFormdiv').append('<input data-netlify="true" type="text" name="product-name" value="' + item.get('name') + '">');
+    $('.bulkFormdiv').append('<input data-netlify="true" type="text" name="product-color" value="' + item.get('color') + '">');
+    // $('.bulkForm').append('<input type="text" type="hidden" name="' + item.get('id') + ' Size" value="' + item.get('size') + '">');
+    $('.bulkFormdiv').append('<input data-netlify="true" type="text" name="product-quantity" value="' + item.get('quantity') + '">');
+    $('.bulkFormdiv').append('<input data-netlify="true" type="text" name="product-price" value="' + item.get('price') + '">');
+    $('.bulkFormdiv').append('<input data-netlify="true" type="text" name="product-total" value="' + item.get('total') + '">');
+  });
+  
+  bulkCart.update();
+
+  
+    // if (itemRow.length > 0) {
+    //   $('.simplecart-area').show();
+    // } else {
+    //   $('.simplecart-area').hide();
+    // };
+    // console.log(item.length)
+  bulkCart.bind( 'afterSave' , function(){ 
+    bulkCart.each( function( item ){
+      // get the shelf item and hide/show its children
+      $("#" + item.get("idem") ).find(".to-add").hide();
+      $("#" + item.get("idem") ).find(".saved").show();
+
+      
+    });
+    
+    emptyCheck();
+    
+  });
+
+  bulkCart.bind( 'beforeRemove' , function(){ 
+    bulkCart.each( function( item ){
+      // get the shelf item and hide/show its children
+      $("#" + item.get("idem") ).find(".to-add").show();
+      $("#" + item.get("idem") ).find(".saved").hide();
+    });
+    
+    
+    emptyCheck();
+    
+  });
+  
+  
+  
+    
+  // var itemRow = $('.itemRow');
+  // if (itemRow.length > 0) {
+  //   $('.simplecart-cart').show();
+  // };
+
+  bulkCart.bind( 'afterAdd' , function(){ 
+    emptyCheck();
+  });
+
+  bulkCart.bind('beforeAdd', function (item) {
+  if (bulkCart.has(item)) 
+    {
+        // $("#" + item.get("idem") ).find(".item_add").hide();
+        // $("#" + item.get("idem") ).find(".saved").show();
+        alert("Already in the Cart");
+        return false;
+    };
+
+    emptyCheck();
+    
+  });
+
+  bulkCart.bindInputs( [{
+  selector: 'shelfItem .removeItem'  , // this is the selector for the remove item link 
+  event: 'click' , // watch for click events
+  callback: function(){
+    // get the shelfItem this link is contained by
+    var shelfItem = bulkCart.$(this).closest('.shelfItem'),
+      // get the UID input in the shelfItem
+      uid = shelfItem.find( ".item_UID" ).val();
+
+    // find the item(s) in simpleCart and remove them
+    // this should only return one item if the UID is unique,
+    // but simpleCart.find() will always return an array if you
+    // pass values to search for, so we use the .each function
+    // to be safe
+    simpleCart.find(".item_UID").each(function( item ){
+      item.remove();
+    });
+  }
+}] );
+
+//   function checkCart(){
+//   var item = $('.itemRow');
+//   if (item.length > 0) {
+//     $('.simplecart-area').show();
+//   } else {
+//     $('.simplecart-area').hide();
+//   }
+//   console.log(item.length)
+// }
+
+// checkCart();
+
+
+});
+
+// if(bulkCart.items().length = 0)
+//       {
+//       //No items in the cart
+//       $('.simplecart-cart').hide();
+//     }
+    
+
+
+
+</script>
+
+<script type="text/javascript">
+  $.scrollIt({
+ // upKey: 38,             // key code to navigate to the next section
+  //downKey: 40,           // key code to navigate to the previous section
+  easing: 'linear',      // the easing function for animation
+  scrollTime: 600,       // how long (in ms) the animation takes
+  activeClass: 'is-active', // class given to the active nav element
+  onPageChange: null,    // function(pageIndex) that is called when page is changed
+  topOffset: 0          // offste (in px) for fixed top navigation
+});
+
+
+buildCart.bind( 'afterAdd' , function( item ){
+  // alert( item.get("name") + " has been added to the cart!");
+  item.get("button").html().hide()
+  
+});
+
+
+var bulkitemTotal = bulkCart.total();
+var builditemTotal = buildCart.total();
+
+var buildQuantity = $("#buildQuantity").on('change', function() {
+      return (this.value);
+    });
+var buildTotal = builditemTotal * buildQuantity;
+
+console.log(buildQuantity);
+
+$("#buildTotal").text(buildTotal)
+// $("#show-total").val(grandTotal)
+
+// buildCart.taxRate('30')
+function myFunction() {
+var x = document.getElementById("buildQuantity").value;
+// document.getElementById("buildGrand").innerHTML = builditemTotal * x;
+}
+
+
+</script> 
+
+<script async src="{{ site.url }}/js/checkout.js"></script>

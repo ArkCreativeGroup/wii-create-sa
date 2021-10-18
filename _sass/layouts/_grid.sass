@@ -1,0 +1,81 @@
+
+.maxwidth-xsm
+    max-width:          420px
+.maxwidth-750
+    max-width:          750px
+.maxwidth-850
+    max-width:          850px
+.maxwidth-350
+    max-width:          350px
+.maxwidth-400
+    max-width:          400px
+.maxwidth-470
+    max-width:          470px
+.maxwidth-280
+    max-width:          280px
+.maxwidth-550
+    max-width:          550px
+    // @media #{ $xxlargeup }
+    //     max-width:          550px
+.maxwidth-590
+    max-width:          590px
+
+
+.w-100p
+    width:              100%
+    @media #{ $mediumdown }
+        &--large
+            width:              100%
+    @media #{ $smalldown }
+        &--small
+            width:              100%
+            
+.grid-wrapper
+    display: grid
+    &.space-30
+        grid-gap: 30px
+        // @media #{ $xxlargeup }
+        //     grid-gap: 30px
+    &.space-50
+        grid-gap: 50px
+    &.space-20
+        grid-gap: 20px
+        @media #{ $xxlargeup }
+            grid-gap: 20px
+    &.space-5
+        grid-gap: 5px
+        @media #{ $xxlargeup }
+            grid-gap: 8px
+    &.col-250
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    &.col-300
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        &-alt
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    &.col-200
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    &.col-160
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+    &.col-120
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+    &.col-320
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+        &-alt
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+
+.flex-grid
+    display: flex
+    flex-wrap: wrap
+    &.space-15
+        margin-left: -7.5px
+        margin-right: -7.5px
+        > *
+            // flex: 1
+            width: 100%
+            padding-left: 7.5px
+            padding-right: 7.5px
+            margin-bottom: 15px
+            &.half-flex
+                flex: 1
+                min-width: 250px
+

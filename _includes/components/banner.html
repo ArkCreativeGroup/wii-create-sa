@@ -1,0 +1,30 @@
+<!-- {%- case include.banner -%}
+    {%- when 'large' -%}
+    {%- when 'small' -%}
+    {%- endcase -%} -->
+<section class="dark-banner flx-center-center-col w-100p wrapper--x {{ banner-size }}">
+    <div class="tx-c w-100p ">
+        <h2 class="font-big-auto tx-c co-white">{{ page.title }}</h2>
+        {% if page.url == "/faq/" %}
+        <div>
+            <div class="banner__input search mx-auto">
+                <input class="input" placeholder="Search..." type="search">
+                
+                <button class="search__btn">
+                    <svg class="">
+                        <use xlink:href="/uploads/icon-sprite.svg#search-icon"></use>
+                    </svg>
+                </button>
+                
+            </div>
+        </div>
+        {% else %}
+        <p class="co-white text-normal-auto lh-30 maxwidth-550 mx-auto">{{ page.description }}</p>
+        {% endif %}
+    </div>
+
+    
+    <img src="{% if page.image %}{{ page.image }}{%else%}/uploads/svg/wavy_lines.svg{% endif %}" alt="{{ page.title }}">
+    
+    
+</section>

@@ -1,0 +1,162 @@
+---
+label: Products
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- name: category
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: categories
+      file: 
+      path: 
+  label: category
+- type: text
+  name: price
+  label: price
+- type: textarea
+  name: description
+  label: description
+- type: image_gallery
+  name: featured_image_path
+  label: featured_image_path
+- type: field_group_list
+  name: styles
+  label: styles
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: color
+    label: color
+pages:
+- _products/Tech Items/3-in-1-connector-cable.md
+- _products/Tech Items/bamboo-usb-flash-drive.md
+- _products/Tech Items/boom-speaker.md
+- _products/Tech Items/car-charger.md
+- _products/Tech Items/desk-caddy.md
+- _products/Tech Items/ear-buds.md
+- _products/Tech Items/earbuds-pack.md
+- _products/Tech Items/jeans-mini-speaker.md
+- _products/Tech Items/key-tracker.md
+- _products/Tech Items/leather-mini-speaker.md
+- _products/Tech Items/mini-speaker.md
+- _products/Tech Items/mouse-pad-with-wireless-charger.md
+- _products/Tech Items/mousepad.md
+- _products/Tech Items/pocket-speaker.md
+- _products/Tech Items/smart-watch.md
+- _products/Tech Items/solo-headphones.md
+- _products/Tech Items/speaker-2.md
+- _products/Tech Items/travel-adaptor.md
+- _products/Tech Items/usb-hub.md
+- _products/Tech Items/usb-memory-stick.md
+- _products/Tech Items/wireless-bluetooth-speaker.md
+- _products/Tech Items/wireless-charger-2.md
+- _products/Tech Items/wireless-charger.md
+- _products/Tech Items/wireless-charging-pad.md
+- _products/Tech Items/wireless-mouse.md
+- _products/apparels/black-socks-smiley-socks-pair.md
+- _products/apparels/bravo-sweater.md
+- _products/apparels/cap.md
+- _products/apparels/croc-socks-smiley-socks-pair.md
+- _products/apparels/henley-shirt.md
+- _products/apparels/hoodie.md
+- _products/apparels/navy-socks-smiley-socks-pair.md
+- _products/apparels/new-york-socks-smiley-socks-pair.md
+- _products/apparels/polo-shirt.md
+- _products/apparels/princeton-sweater.md
+- _products/apparels/sweatshirt.md
+- _products/apparels/t-shirt.md
+- _products/apparels/v-neck-t-shirt.md
+- _products/bags/5th-avenue-bag.md
+- _products/bags/alex-varga-bag.md
+- _products/bags/aztec-bag.md
+- _products/bags/bobby-anti-theft-bag.md
+- _products/bags/championship-bag.md
+- _products/bags/cobalt-bag.md
+- _products/bags/cute-laptop-bag.md
+- _products/bags/drawstring-bagger.md
+- _products/bags/gateway-bag.md
+- _products/bags/greyston-backpack.md
+- _products/bags/hamilton-bag.md
+- _products/bags/hamilton-tote.md
+- _products/bags/metro-bag.md
+- _products/bags/nevada-bag.md
+- _products/bags/sahara-bag.md
+- _products/bags/scotland-anti-theft-bag.md
+- _products/bags/soho-computer-bag.md
+- _products/bags/spartan-bag.md
+- _products/bags/sports-bag.md
+- _products/bags/supernova-laptop-bag.md
+- _products/bags/swiss-anti-theft.md
+- _products/bags/swiss-bag.md
+- _products/bags/symphony-drawstring-bag.md
+- _products/bags/terranova-laptop-bag.md
+- _products/bags/tote-bag-contrast-handles.md
+- _products/bags/transit-bag.md
+- _products/bags/vegas-conference-bag.md
+- _products/bags/woven-drawstring.md
+- _products/bags/xd-bag.md
+- _products/bonus-items/bamboo-keyholder.md
+- _products/bonus-items/dazzle-card-holder.md
+- _products/bonus-items/keyholder.md
+- _products/bonus-items/lanyard.md
+- _products/bonus-items/lapel-pins.md
+- _products/bonus-items/pop-card-holder.md
+- _products/bonus-items/pop-stand.md
+- _products/bonus-items/popsocket.md
+- _products/bonus-items/stress-ball.md
+- _products/bonus-items/travel-charger.md
+- _products/bonus-items/webcam-cover.md
+- _products/bonus-items/wristband.md
+- _products/drinkware/baxton-water-bottle.md
+- _products/drinkware/class-wii-bottle.md
+- _products/drinkware/colombia-tumbler.md
+- _products/drinkware/congo-water-bottle.md
+- _products/drinkware/ecofriendly-glass-bottle.md
+- _products/drinkware/eden-bottle.md
+- _products/drinkware/flask-tumbler.md
+- _products/drinkware/fresco-water-bottle.md
+- _products/drinkware/gunmetal-travel-bottle.md
+- _products/drinkware/hot-n-cold-flask.md
+- _products/drinkware/islande-water-bottle.md
+- _products/drinkware/kaledoscope-mug.md
+- _products/drinkware/kooshty-water-bottle.md
+- _products/drinkware/omega-mug.md
+- _products/drinkware/seinna-cork-mug.md
+- _products/drinkware/serendipity.md
+- _products/drinkware/spoon-mug.md
+- _products/drinkware/transparent-waterbottle.md
+- _products/notebook-pen/a6-notebook.md
+- _products/notebook-pen/alex-varga-notebook.md
+- _products/notebook-pen/blot-notebook.md
+- _products/notebook-pen/bravado-notebook.md
+- _products/notebook-pen/cypher-notebook.md
+- _products/notebook-pen/edge-notebook.md
+- _products/notebook-pen/fourth-estate-notebook.md
+- _products/notebook-pen/jelly-notebook.md
+- _products/notebook-pen/jotter-notebook.md
+- _products/notebook-pen/kato-notebook.md
+- _products/notebook-pen/oakridge-notebook.md
+- _products/notebook-pen/omega-notebook.md
+- _products/notebook-pen/penisula-notebook.md
+- _products/notebook-pen/prominence-notebook.md
+- _products/notebook-pen/renaissance-notebook.md
+- _products/notebook-pen/showcase-notebook.md
+- _products/notebook-pen/standford-notebook.md
+- _products/notebook-pen/trifecta-notebook.md
+- _products/notebook-pen/tuscany-notebook.md
+- _products/notebook-pen/windsor-notebook.md
+- _products/packaging/2-piece-rigid-box.md
+- _products/packaging/custom-mailer-box-in-out-print.md
+- _products/packaging/full-color-mailer-box.md
+- _products/packaging/mailer-box-with-custom-label.md
+- _products/packaging/mailer-box-with-sleeve.md
+- _products/packaging/polymailers.md

@@ -1,0 +1,30 @@
+---
+layout: default-dark
+---
+{% assign banner-size = "large" %}
+{% include components/banner.html %}
+
+<section class="wrapper--x py-80">
+    <div class="width-auto-alt content-view j-c-sb">
+        <div class="flex-1 mr-20 mb-30">
+            {% if page.title == 'Partnerships'%}
+                {% assign sidetitle = "Business Development" %}
+            {% else %}
+                {% assign sidetitle = "Customer Support" %}
+            {% endif %}
+            <h3 class="text-medium-auto mb-10">{{ sidetitle }}</h3>
+            {% for entry in page.phone-number %}
+            <!-- <p class="text-normal-auto mb-10">{{ entry }}</p> -->
+            <p class="text-normal-auto mb-10"><a href="tel:{{ entry }}" class="mb-10 text-normal-auto">{{ entry }}</a></p>
+            {% endfor %}
+            <span class="divider blk mb-10 mt-10 maxwidth-280"></span>
+
+            <h3 class="text-medium-auto mb-5">Email:</h3>
+            <a href="mailto:{{ page.email }}" class="mb-10 text-normal-auto">{{ page.email }}</a>
+        </div>
+        <div>
+            <h2 class="font-medium-auto co-secondary">Send us a message</h2>
+            {% include components/form.html %}
+        </div>
+    </div>
+</section>

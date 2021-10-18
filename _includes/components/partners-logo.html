@@ -1,0 +1,8 @@
+<section class="wrapper--x tx-c">
+    <p class="text-small-auto caps ls-1 mb-10">Trusted by some of Africa’s fastest growing brands</p>
+    <div class="brand-list">
+        {% for entry in site.data.brands.brand-list-alt %}
+        <img src="{{ entry.logo }}" alt="{{ entry.name }}">
+        {% endfor %}
+    </div>
+</section>

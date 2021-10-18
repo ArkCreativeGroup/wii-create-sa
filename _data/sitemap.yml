@@ -1,0 +1,40 @@
+list:
+  - title: Build a Pack
+    url: /build-your-pack
+    sublist:
+      - title:
+        url:
+  - title: Preset Packs
+    url:
+    sublist:
+      - title: Starter Pack
+        url: /products/starter-pack
+      - title: Classic Pack
+        url: /products/classic-pack
+      - title: Premium Pack
+        url: /products/premium-pack
+  - title: Company
+    url:
+    sublist:
+      - title: Why Wii
+        url: /why-wii
+      - title: Contact Us
+        url: /contact-us
+      - title: Partnerships
+        url: /partnerships
+  - title: Help
+    url:
+    sublist:
+      - title: Shipping & Delivery
+        url: /shipping-delivery
+      - title: FAQs
+        url: /faq
+      - title: API (Coming Soon)
+        url:
+  - title: Bulk Orders
+    url: /bulk-order
+    sublist:
+
+# Shipping & Delivery
+# FAQs
+# API (Coming Soon)

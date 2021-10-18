@@ -1,0 +1,103 @@
+---
+title: Checkout
+description:
+sitemap: false
+layout: default
+---
+
+<div class="wrapper--x merch-banner">
+    <div class="sub-header tx-c mb-120">
+        <h2 class="font-big-auto co-secondary">Checkout</h2>
+    </div>
+  <div class="multi-display__container width-auto-fill flx-inverse al-i-fs">
+    <div class="multi-display__content">
+      <div class="summary-box">
+        <h3 class="font-small-auto mb-30 pb-20 lh-1-h border-bottom">Order Summary</h3>
+
+        <div class="flx-space--center mb-10" id="packCart">
+          <div class="size--w64">
+            <img class="w-100p" id="prdct-src" src="" alt="">
+          </div>
+          <div class="flex-1 pl-20">
+            <h2 class="text-medium-auto co-primary mb-5" id="prdct-value"></h2>
+            <p><span>&#8358;</span><span id="prdct-amount" class="item_custom-attribute"></span></p>
+          </div>
+          <div>
+            <a id="item-remover" href="" class="remover"><span class="deleteIcon"></span></a>
+          </div>
+        </div>
+        <div class="simplecart-area">
+          <div class="">
+            
+            <div class="d-flx-space mt-30">
+              <div class=" flex-1 mr-15">
+                  <input class="input adjustable" type="text" placeholder="Promo code">
+              </div>
+              <div>
+                <a class="btn btn--standard" href="">Apply</a>
+              </div>
+            </div>
+            <ul class="py-30 border-bottom border-top my-30">
+              <li class="flx-center-space-wrap mb-15">
+                <p>Subtotal:</p>
+                <p class="simpleCart_total111" id="total-amount"></p>
+              </li>
+              <!-- <li class="flx-center-space-wrap mb-15">
+                <p>Shipping:</p>
+                <p class="">1200</p>
+              </li> -->
+              <li class="flx-center-space-wrap">
+                <p>Taxes (7.5% VAT):</p>
+                <p id="tax-amount" class=""></p>
+              </li>
+            </ul>
+            <div class=" flx-center-space-wrap">
+              <p>Total: </p>
+              <span class="simpleCart_grandTotaliii text-bigger-auto co-secondary theTotal" id="grandtotal-amount"></span>
+              <!-- <div><p class="my-15">Grand Total: </p><span class="simpleCart_quantity"></span></div>
+              <div>items - <span class="simpleCart_total"></span></div> -->
+               
+            </div>
+            <!-- <a class="button right" href="/checkout/">Checkout</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="multi-display__content">
+      <h3 class="font-small-auto mb-30 pb-30 lh-1-h border-bottom">Contact Details</h3>
+      <form class="maxwidth-590 mx-auto prebuiltForm" method="POST" action="https://formspree.io/f/moqpllyb">
+      
+        <div class="flex-grid space-15">
+          <div class="">
+              <input class="input" required name="company-name" type="text" placeholder="Company Name">
+          </div>
+          <div class="half-flex">
+              <input class="input" required name="first-name" type="text" placeholder="First Name">
+          </div>
+          <div class="half-flex">
+              <input class="input" type="text" required name="last-name" placeholder="Last Name">
+          </div>
+          <div class="">
+              <input class="input" type="email" required name="email" placeholder="Email Address">
+          </div>
+          <div class="">
+              <input class="input" type="text"  required name="phone-number" placeholder="Phone Number">
+          </div>
+          <div class="prebuiltForminput">
+
+          </div>
+          <div>
+            <!-- <input type="hidden" name="_to" value="">
+            <input type="text" name="_gotcha" style="display: none;"> -->
+              <button class="btn btn--standard w-100p" type="submit">Place Order</button>
+          </div>
+          <div>
+            <p class="tx-c"><i>You will get design mockups and a quote after placing your order.</i></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

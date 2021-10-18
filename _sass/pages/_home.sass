@@ -1,0 +1,233 @@
+// 
+    // Home Page
+
+    // @package eyowo
+    // @author  Tonye Dickson <psybug>
+    // @version 1.0.0
+    
+//
+
+
+
+.show
+    display:                            block
+.hide
+    display:                            block
+    @media screen and (min-width: 740px)
+        display:                        none
+
+.sub-header
+    max-width: 690px
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    @media #{ $xxlargedown}
+        max-width: 650px
+        // @extend .tx-c
+
+.services
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: repeat(6, 8vw)
+    // grid-template-columns: repeat(auto-fit, minmax(30px, 1fr))
+    // grid-template-areas: 'one one' 'two three' 'four five' 'six six'
+    // grid-template-rows: 80px 1fr 30px
+    @media #{ $smallup}
+        grid-gap: 15px
+    //     grid-template-areas: 'one two' 'three four' 'five six'
+    // @media #{ $mediumup}
+    //     grid-template-areas: 'one two three' 'four five six'
+    @media #{ $largeup}
+        grid-template-rows: repeat(6, 6vw)
+    //     grid-template-areas: 'one zero three ' 'one two three' 'four five six' 'four five six' 
+    // @media #{ $xxlargeup}
+    //     grid-gap: 30px
+    &--box
+        background-color: #000000
+        padding: 20px
+        // min-height: 180px
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        position: relative
+        transition: all 0.3s ease
+        @media #{ $smallup}
+            padding: 40px
+            // min-height: 250px
+        @media #{ $mediumup}
+            padding: 40px
+            // min-height: 300px
+        @media #{ $xxlargeup}
+            padding: 40px
+            // min-height: 350px
+        h3
+            color: #ffffff
+            @extend .text-medium-auto
+            position: relative
+            z-index: 2
+        img
+            position: absolute
+            left: 0
+            top: 0
+            height: 100%
+            width: 100%
+            object-fit: cover
+        &:nth-child(1)
+            grid-area: one
+            grid-column-start: 1
+            grid-column-end: 3
+            grid-row-start: 1
+            grid-row-end: 4
+        &:nth-child(2)
+            grid-area: two
+            grid-column-start: 3
+            grid-column-end: 5
+            grid-row-start: 2
+            grid-row-end: 4
+        &:nth-child(3)
+            grid-area: three
+            grid-column-start: 5
+            grid-column-end: 7
+            grid-row-start: 2
+            grid-row-end: 4
+        &:nth-child(4)
+            grid-area: four
+            grid-column-start: 1
+            grid-column-end: 3
+            grid-row-start: 4
+            grid-row-end: 6
+        &:nth-child(5)
+            grid-area: four
+            grid-column-start: 3
+            grid-column-end: 5
+            grid-row-start: 4
+            grid-row-end: 7
+        &:nth-child(6)
+            // grid-area: six
+            grid-column-start: 5
+            grid-column-end: 7
+            grid-row-start: 4
+            grid-row-end: 6
+
+.quote-slider
+    max-width: 700px
+    // padding: 30px
+    position: relative
+    @media #{ $largeup}
+        max-width: 1000px
+    ul
+        width: 100%
+        // overflow: hidden
+    li
+        width: 100%
+        display: block
+        @media #{ $smallup}
+            padding: 30px
+    &__container
+        @media #{ $largeup}
+            display: flex
+            align-items: center
+        
+        // max-width: 1000px
+    &__content
+        background-color: $graycolor
+        padding: 30px 30px
+        display: block
+        min-height: 350px
+        position: relative
+        flex: 1
+        @media #{ $smallup}
+            padding: 50px 60px
+        .extra-sheet
+            position: absolute
+            content: ''
+            display: block
+            background-color: $graycolor
+            z-index: -3
+            @media #{ $largeup}
+                top: 0
+                width: 30%
+                height: 100%
+                right: 100%
+            @media #{ $largedown}
+                bottom: 100%
+                height: 100px
+                width: 100%
+                left: 0
+        .logo
+            height: 24px
+        &--text
+            position: relative
+            padding-top: 20px
+            z-index: 1
+            &::after
+                display: inline-block
+                width: 54px
+                height: 45px
+                content: ''
+                background: url("/uploads/svg/quote.svg") no-repeat
+                background-size: 100%
+                background-position: center
+                position: absolute
+                top: 0
+                left: -30px
+        
+    &__image
+        width: 100%
+        max-width: 390px
+        height: 270px
+        background-color: #dddddd
+        object-fit: cover
+        // flex: 1
+        border-radius: 5px
+        position: relative
+        z-index: 10
+        overflow: hidden
+
+        @media #{ $largedown}
+            margin-left: auto
+            margin-right: auto
+        @media #{ $smalldown}
+            max-width: 300px
+            height: 160px
+        img
+            object-fit: cover
+            width: 100%
+            height: 100%
+    .controls
+        background-color: #fff
+        height: 48px
+        width: 48px
+        box-shadow: 0px 0px 16px rgba(27, 28, 86, 0.15)
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        margin: 8px
+        color: #2F306A
+        @media #{ $smalldown}
+            height: 36px
+            width: 36px
+            position: relative !important
+        &:hover
+            color: #ffffff
+            background-color: $primarycolor
+        
+
+
+        
+
+        
+.brand-list
+    // max-width: 1000px
+    @extend .mx-auto
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    align-items: center
+    margin-bottom: 30px
+    img
+        margin: 15px 20px
+        height: 24px
+        filter: grayscale(1)

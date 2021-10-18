@@ -1,0 +1,106 @@
+// 
+    // Buttons
+
+    // @package eyowo
+    // @author  Tonye Dickson <psybug>
+    // @version 1.0.0
+
+//
+
+.btn
+    display:                    inline-flex
+    align-items:                center
+    text-align:                 center
+    justify-content:            center
+    padding:                    0 3rem
+    white-space:                nowrap
+    height:                     56px
+    font-size:                  1.8rem
+    font-weight:                500
+    border:                     1px solid transparent
+    border-radius:              4px
+    font-family:                $contentfont
+    cursor:                     pointer
+    @media #{ $largedown}
+        height:                 52px
+        font-size:              1.6rem
+    @media #{ $smalldown}
+        height:                 46px
+        font-size:              1.6rem
+    &--standard
+        background-color:       $primarycolor
+        color:                  #ffffff
+        // height:                 50px
+        &:hover
+            color: #ffffff
+            background-color:       darken($primarycolor, 20%)
+    &--secondary
+        background-color:       #ffffff
+        color:                  $primarycolor
+        border-color:           $primarycolor
+        border-width: 2px
+        &:hover
+            background-color:       $primarycolor
+            color:                  #ffffff
+    &--lite
+        @extend .btn
+        background-color:       #ffffff
+        color:                  $primarycolor
+        &:hover
+            color:                  $primarycolor
+            background-color:       lighten( $primarycolor, 50% )
+
+    // &--premium  
+    &:hover
+        box-shadow:             0 2px 2px 0 rgba( 0, 0, 0,0.14 ), 0 1px 5px 0 rgba( 0, 0, 0, 0.12 ), 0 3px 1px -2px rgba( 0, 0, 0, 0.2 )
+
+button.active
+    border-bottom:              1.5px solid $primarycolor
+button:hover
+    cursor:                     pointer
+
+
+.cart-btn-holder
+    position: fixed
+    bottom: 20px
+    left: 0
+    width: 100%
+    z-index: 100
+    // height: 0
+.cart-button
+    width: 72px
+    height: 72px
+    border-radius: 50%
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    background-color: $primarycolor
+    position: absolute
+    bottom: 0
+    right: 0
+    box-shadow: 0px 0px 48px rgba(173, 20, 79, 0.4)
+    &.uk-open
+        background-color: #E9048B
+    &__number
+        position: absolute
+        display: inline-block
+        min-width: 15px
+        text-align: center
+        background-color: #E9048B
+        color: #ffffff
+        transform: translate(-31%, -110%)
+        font-size: 12px
+        border-radius: 50%
+        left: 50%
+        top: 50%
+        .uk-open &
+            display: none
+    .cart-close-icon
+        display: none
+    &.uk-open
+        .cart-icon
+            display: none
+        .cart-close-icon
+            display: inline-block
+
+    

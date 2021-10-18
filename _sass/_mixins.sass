@@ -1,0 +1,215 @@
+// 
+    // Mixins
+
+    // @package eyowo
+    // @author  Tonye Dickson <psybug>
+    // @version 1.0.0
+
+// Typography
+=caps( $fsize, $fweight, $ttransform )
+    font-size:              $fsize
+    font-weight:            $fweight
+    text-transform:         $ttransform
+
+%width-auto, .width-auto-alt
+    max-width: 1100px
+    margin: auto
+
+%width-auto, .width-auto
+    max-width: 1400px
+    margin: auto
+    @media #{ $xxlargedown}
+        max-width: 1000px
+    // @media #{ $xlargedown}
+    //     max-width: 959px
+    // @media #{ $largedown}
+    //     max-width: 767px
+    // @media #{ $mediumdown}
+    //     max-width: 480px
+
+%width-auto-fill, .width-auto-fill
+    max-width: 1270px
+    margin: auto
+    // @media #{ $xxlargeup}
+    //     max-width: 1440px
+    @media #{ $xxlargedown}
+        max-width: 1200px
+    @media #{ $xxlargeup}
+        max-width: 1600px
+    // @media #{ $largedown}
+    //     max-width: 767px
+    // @media #{ $mediumdown}
+    //     max-width: 480px
+
+.font-stucture
+    margin-bottom: 20px
+    line-height: 170%
+    font-weight: 500
+    font-family: $headingfont
+    color: $primarycolor
+    @media #{ $mediumdown}
+        // margin-bottom: 15px
+
+// font size 48
+%font-biggest-auto, .font-biggest-auto
+    font-size: 48px
+    line-height: 130%
+    @extend .font-stucture
+    @media #{ $largedown}
+        font-size: 36px
+    @media #{ $smalldown}
+        font-size: 24px
+
+// font size 64
+%font-bigger-auto, .font-bigger-auto
+    @extend .font-stucture
+    font-size: 48px
+    @media #{ $xxlargedown}
+        font-size: 40px
+    @media #{ $mediumdown}
+        font-size: 36px
+    @media #{ $smalldown}
+        font-size: 24px
+
+// font size 48
+%font-big-auto, .font-big-auto
+    font-size: 32px
+    line-height: 140%
+    @extend .font-stucture
+    @media #{ $largedown}
+        font-size: 24px
+
+// font size 40
+%font-medium-auto, .font-medium-auto
+    font-size: 32px
+    line-height: 140%
+    @extend .font-stucture
+    @media #{ $mediumdown}
+        font-size: 24px
+
+// font size 32
+%font-xmedium-auto, .font-xmedium-auto
+    font-size: 64px
+    @extend .font-stucture
+    @media #{ $mediumdown}
+        font-size: 24px
+
+// font size 28
+%font-small-auto, .font-small-auto
+    font-size: 24px
+    font-weight: 500
+    margin-bottom: 10px
+    @extend .font-stucture
+    @media #{ $mediumdown}
+        font-size: 18px
+
+
+// text size 32
+%text-bigger-auto, .text-bigger-auto
+    line-height: 140%
+    font-size: 3.2rem
+    font-weight: 500
+    @media #{ $smalldown}
+        font-size: 1.6rem
+
+// text size 20
+%text-big-alt-auto, .text-mediumalt-auto
+    line-height: 140%
+    font-size: 2rem
+    font-weight: 500
+    @media #{ $smalldown}
+        font-size: 1.8rem
+
+// text size 10
+%text-big-auto, .text-big-auto
+    line-height: 140%
+    font-weight: 500
+    font-size: 1.8rem
+    @media #{ $smalldown}
+        font-size: 1.6rem
+
+%text-semi-auto, .text-semi-auto
+    line-height: 140%
+    font-size: 2.2rem
+    font-weight: 500
+    @media #{ $xxlargedown}
+        font-size: 1.7rem
+    @media #{ $smalldown}
+        font-size: 1.6rem
+
+
+// text size 22
+%text-medium-auto, .text-medium-auto
+    line-height: 150%
+    font-size: 2rem
+    font-weight: 500
+    @media #{ $xxlargedown}
+        font-size: 1.6rem
+    @media #{ $smalldown}
+        font-size: 1.4rem
+
+%text-normal-auto, .text-normal-auto
+    line-height: 150%
+    font-size: 1.8rem
+    @media #{ $xxlargedown}
+        font-size: 1.6rem
+    @media #{ $smalldown}
+        font-size: 1.4rem
+
+// text size 20
+%text-small-auto, .text-small-auto
+    line-height: 140%
+    font-size: 1.4rem
+    @media #{ $xxlargeup}
+        font-size: 1.8rem
+
+%last-mb0
+    &:last-child
+        margin-bottom: 0
+
+.multi-display
+    &__container        
+        @extend .mx-auto
+        @media #{ $largeup}
+            display: flex
+            justify-content: space-between
+            align-items: center
+        @media #{ $largedown}
+            max-width: 600px
+        &.al-i-fs
+            align-items: flex-start
+        
+    &__content
+        @media #{ $largedown}
+            margin-bottom: 30px
+        &.no-mb
+            margin-bottom: 0
+        @media #{ $largeup}
+            flex: 1
+            max-width: calc(50% - 25px)
+        // &.with-image
+        //     padding-top: 50%
+        //     position: relative
+        //     @media #{ $largeup}
+        //         padding-top: 35%
+        //     img
+        //         position: absolute
+        //         top: 0
+        //         left: 0
+        //         width: 100%
+        //         height: 100%
+        //         object-fit: cover
+
+
+.content-view
+    display: flex
+    flex-wrap: wrap
+    &__title
+        width: 100%
+        max-width: 400px
+        padding-right: 40px
+    &__content
+        flex: 1
+    
+
+

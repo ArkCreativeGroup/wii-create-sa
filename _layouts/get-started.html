@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<section class="merch-banner wrapper--x">
+    <div class="sub-header tx-c mb-120">
+        <h2 class="font-big-auto">Get started with our prebuilt packs or build your own packs </h2>
+    </div>
+
+    <div class="width-auto-fill mb-70">
+
+        {% assign card = site.packs | sort: 'position' %}
+        {% assign cardType = "white" %}
+        {% assign has-list = true %}
+        {% assign words = 15 %}
+        {% assign has-price-tag = true %}
+        {% assign cardGrid = 'col-250 space-30' %}
+        {% include components/cards.html %}
+ 
+    </div>
+    <div class="width-auto">
+        {% assign card = site.data.cards.more-options %}
+        {% assign cardType = "white" %}
+        {% assign has-price-tag = false %}
+        {% assign words = 30 %}
+        {% assign has-list = true %}
+        {% assign cardGrid = 'col-250 space-50 has-inverse side-image' %}
+        {% include components/cards.html %}
+    </div>
+
+
+    <div class="py-80 tx-c mb-60">
+        <p class="mb-20">or</p>
+        <a class="text-big-auto underline" href="{{ page.whatsapp-url }}">Speak with a Rep</a>
+    </div>
+</section>

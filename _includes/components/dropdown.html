@@ -1,0 +1,23 @@
+{%- case include.dropdown -%}
+
+{%- when 'more' -%}
+<div uk-dropdown="mode: click; animation: uk-animation-slide-bottom-small" class="dropdown alter for-mobile">
+    <span class="caret caret--more-tab"></span>
+    <ul class="none m-0">
+        {%- for entry in site.data.dropdown.more_links -%}
+
+        <li>
+            <a class="dropdown__link d-flx al-i-c" href="{{ site.url }}{{ entry.slug }}">
+                <svg class="icon-w--18 mr-10">
+                    <use xlink:href="/uploads/icon-sprite.svg#{{ entry.icon-id }}"></use>
+                </svg>{{ entry.name }}</a>
+        </li>
+
+        {%- endfor -%}
+    </ul>
+    <div class="p-20 absolute-bottom-right w-100p hide-mediumup">
+        <a href="" type="button" class="btn btn--lite" uk-toggle="target: .alter">Close</a>
+    </div>
+</div>
+
+{%- endcase -%}

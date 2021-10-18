@@ -1,0 +1,133 @@
+<ul class="product-grid wii-product  {{ cardGrid }}">
+    {% for card-list in card %}
+        {% if card-list.category == entry.path %}
+        <li class="card wii-product-wrapper {{ cardType }} {{cartType}}_shelfItem" id="item-{{cartType}}-{{ card-list.title | slugify }}">
+            <div class=" card__div item_wrapper" id="{{ card-list.title | slugify }}">
+                <span style="display: none;" class="item_idem item_UID" itemprop="idem">item-{{ cartType }}-{{ card-list.title | slugify }}</span>
+                <input type="hidden" type="text" class="item_idem item_UID" itemprop="UID"  name="" id="" value="item-{{cartType}}-{{ card-list.title | slugify }}">
+                <a uk-toggle href="#modal-{{ card-list.title | slugify }}" class="card__image">
+                    <img src="{{ card-list.featured_image_path.first }}" alt="{{ card-list.title }}" class="item_image">
+                </a>
+                <div class="card__content alter" >
+                    <div class="card__content--body">
+                        <div class="card__content--head-alt">
+                            <a uk-toggle href="#modal-{{ card-list.title | slugify }}"><h3 class="card__content--title item_name wii-product-name" itemprop="name">{{ card-list.title }}</h3></a>
+                        </div>
+                        <span class="wii-product-title">Starting at ₦ <span class="item_price">{{ card-list.price }}</span></span>
+                    </div>
+                    <div class="card__content--footer">
+                        <a class="text-medium-auto to-hide" href="">Add to Pack </a>
+                        <a class="circle-add to-add"   uk-toggle href="#modal-{{ card-list.title | slugify }}"></a>
+                        <a class="circle-add saved" style="display:none;"  uk-toggle href="#modal-{{ card-list.title | slugify }}"></a>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div id="modal-{{ card-list.title | slugify }}" data-uk-modal="container: false" class="modal">
+                <div class="uk-modal-dialog modal--body big">
+                    <div class="modal--head">
+                        <div class="modal--head__wrapper">
+                            <h2 class="text-bigger-auto m-0">{{ modal-header }}</h2>
+                            <button class="uk-modal-close modal--head__close" type="button">
+                                <svg class="square--32">
+                                    <use xlink:href="/uploads/icon-sprite.svg#modal-close-icon"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal--content product-modal">
+                        <div class="product-modal__image">
+                            <div uk-slider>
+                               <div class="mb-20">
+                                    <ul class="uk-slider-items product-modal__slider">
+                                        {% for item in card-list.featured_image_path %}
+                                        <li>
+                                            <img src="{{ item }}" alt="{{ card-list.title }}" class="" >
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                               </div>
+                                
+                                <div class="mb-20">
+                                    <div class="px-10">
+                                        <ul class="product-modal__slider-ctrl uk-slider-items">
+                                            {% for item in card-list.featured_image_path %}
+                                            <li uk-slider-item="{{ forloop.index0 }}">
+                                                <a href=""><img src="{{ item }}" alt="{{ card-list.title }}" class="" ></a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="product-modal__slider-arrow">
+                                        <a class="uk-position-bottom-left-out" href="#" uk-slider-item="previous">
+                                            <svg width="8" height="14" class="">
+                                                <use xlink:href="/uploads/icon-sprite.svg#slider-left"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="uk-position-bottom-right-out to-right" href="#" uk-slider-item="next">
+                                            <svg width="8" height="14" class="">
+                                                <use xlink:href="/uploads/icon-sprite.svg#slider-right"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-modal__content">
+                            <h3 class="card__content--title mb-20">{{ card-list.title }}</h3>
+                            <div class="content mb-30">
+                                {{ card-list.description | markdownify }}
+                            </div>
+
+                            {% if card-list.styles %}
+                            <div class="mb-20">
+                                <p class="fw-medium mb-15">Available colors:</p>
+                                <div class="style-picker hide">
+                                    {% for style in card-list.styles %}
+                                    <div id="product-{{ forloop.index }}"{% if forloop.first %} class=""{% endif %}style="background-color: {{ style.color }}"></div>
+                                    {% endfor %}
+
+                                </div>
+
+                                <div class="style-picker product-modal__color">
+                                    {% for style in card-list.styles %}
+                                      <div id="product-{{ forloop.index }}"{% if forloop.first %} itemprop="color" class="item_color"{% endif %}style="background-color: {{ style.color }}"><span class="d-none">{{ style.name }}</span></div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if page.view == 'bulk-order' %}
+                            <div class="mb-20">
+                                <p class="fw-medium mb-15">Select Quantity:</p>
+                                <select class="select item_quantity" itemprop="quantity" name="" id="">
+                                    <option selected value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                    <option value="250">250</option>
+                                    <option value="500">500</option>
+                                </select>
+                            </div>
+                            {% endif %}
+
+                            <div class="mb-20">
+                                <span class="text-big-auto mr-20 fw-medium">₦ <span class="">{{ card-list.price }}</span>/Item</span>
+                                <!-- <span class="co-codegray f-12">₦ 100,000 (50 packs)</span> -->
+                            </div>
+                            <div>
+                                <a class="btn btn--standard item_add to-add uk-modal-close" href="javascript:;">Add to Pack</a>
+                                <div class="bulkCart_item">
+
+                                    <a style="display: none;" class="btn btn--standard bulkCart_remove removeItem saved uk-modal-close" href="javascript:;">Remove from pack</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,49 @@
+.lister
+    li
+        position: relative
+        padding-left: 32px
+        @extend .text-normal-auto
+        margin-bottom: 10px
+        &::after
+            display: inline-block
+            width: 18px
+            height: 18px
+            content: ''
+            background: url("/uploads/svg/check-round.svg") no-repeat
+            background-size: 100%
+            background-position: center
+            position: absolute
+            top: 3px
+            left: 0
+    &.lite li
+        font-weight: normal
+        margin-bottom: 0
+
+.numbered-list
+    margin-left: 15px
+    li
+        padding-left: 35px
+        position: relative
+        padding-top: 3px
+        padding-bottom: 30px
+        border-left: $borderline
+        border-left-style: dashed
+        &:last-child
+            border: none
+    &__index
+        font-weight: 500
+        display: inline-flex
+        width: 30px
+        height: 30px
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        border: 2px solid $graycolor
+        background-color: darken($graycolor, 10%)
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 1
+        margin-left: -15.5px
+
+        

@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="mb-70 merch-banner wrapper--x">
+    <div class="sub-header mb-70">
+        <h2 class="font-big-auto co-secondary tx-c">Order cool merch - in bulk! </h2>
+        <div class="d-ibl mx-auto tx-l mb-30">
+            {% assign lists = page.prenop-list %}
+            {% include components/list-mark.html %}
+        </div>
+        <div>
+            <a  class="btn btn--standard" href="/bulk-order/products">Explore Products</a>
+        </div>
+    </div>
+    
+    {% include components/partners-logo.html %}
+</div>
+
+<div class="bg-gray wrapper--x py-80">
+    <h2 class="font-medium-auto tx-c mb-30">3 easy steps for progress in this life</h2>
+    <div class="multi-display__container al-i-fs">
+        <div class="multi-display__content">
+            <div class="img-fit img-fit__landscape-alt">
+                <img class="contain" src="{{ page.collage-image }}" alt="">
+            </div>
+        </div>
+        <div class="multi-display__content pt-30">
+            <ul class="numbered-list maxwidth-400 mb-40">
+                {% for entry in page.hack-list %}
+                <li>
+                    <span class="numbered-list__index">{{ forloop.index }}</span>
+                    <h3 class="text-medium-auto co-secondary mb-5">{{ entry.title }}</h3>
+                    <p class="text-normal-auto"> {{ entry.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <a  class="btn btn--standard" href="/bulk-order/products">Explore Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper--x py-80">
+    <h2 class="font-medium-auto tx-c">Send us a message</h2>
+    {% include components/form.html %}
+</div>

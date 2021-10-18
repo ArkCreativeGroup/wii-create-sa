@@ -1,0 +1,91 @@
+.arrow
+    display: inline-flex
+    align-items: center
+    color: $primarycolor
+    @extend .text-medium-auto
+    font-weight: 500
+    &.black
+        filter: brightness(0)
+    &:after
+        content: ''
+        display: inline-block
+        width: 12px
+        height: 10px
+        background: url(/uploads/double-arrow.svg)
+        background-repeat: no-repeat
+        background-size: 10px
+        margin-left: 10px
+        // background-position-y: -1px
+        transition: all 0.2s ease-out
+        transition-timing-function: cubic-bezier(.65, 1.95, .03, .32)
+    &:hover
+        color: $primarycolor
+    &:hover:after
+        transform: translateX(5px)
+
+.link
+    color: $primarycolor
+    &:hover
+        text-decoration: underline
+    &--italic
+        @extend .link, .text-normal-auto, .flx-center
+        font-style: italic
+        text-decoration: underline
+        font-weight: 500
+        color: $codegray
+
+        &:hover
+            color: $primarycolor
+.link-to
+    background-color: $graycolor
+    position: relative
+    width: 100%
+    &:hover
+        background-color: darken($graycolor, 4%)
+    &::after
+        display: inline-block
+        width: 16px
+        height: 16px
+        content: ''
+        background: url("/uploads/svg/arrow-to.svg") no-repeat
+        background-size: 100%
+        background-position: center
+        position: absolute
+        top: 50%
+        margin-top: -8px
+        right: 20px
+        transition: all 0.3s ease
+    &:hover:after
+        transform: rotate(45deg)
+        transition: all 0.3s cubic-bezier(0.36, 0.54, 0, 0.99)
+
+.circle-eye
+    width: 100px
+    height: 100px
+    background-color: #ffffff
+    display: inline-flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+
+.circle-add
+    display: inline-block
+    width: 40px
+    height: 40px
+    border: 2px solid $secondarycolor
+    border-radius: 50%
+    background: url("/uploads/svg/add.svg") no-repeat
+    background-size: 24px
+    background-position: center center
+    &:hover
+        background-color: lighten($secondarycolor, 50%)
+        box-shadow: 0px 0px 16px rgba(27, 28, 86, 0.15)
+    &.saved
+        background-image: url("/uploads/svg/check-white.svg")
+        background-repeat: none
+        background-color: $secondarycolor
+        &:hover
+            background-color: $secondarycolor
+            background-position: center center
+

@@ -1,0 +1,51 @@
+filter-option:
+  - title: Categories
+    list:
+      - name: Business Stationery
+      - name: Clothing & Apparel
+      - name: Marketing Essentials
+      - name: Banners & Signs
+      - name: Packaging & Retail
+  - title: Collections
+    list: 
+      - name: Stickers & Labels
+      - name: Corporate Gifts
+      - name: Wedding
+      - name: Fashion & Retail
+      - name: Exhibition
+      - name: Beauty & Cosmetics
+      - name: Culinary
+      - name: Art
+  - title: Sample Packs
+    list:
+      - name: Business Card Sample Packs
+      - name: Standard Sample Pack
+
+
+filter-category:
+  - title: Industry
+    list:
+      - name: Health, Beauty and Fitness (300)
+      - name: Technology  (50)
+      - name: Food and Restaurant  (20)
+      - name: Education and Training  (35)
+      - name: Travel & Tourism (22)
+      - name: Financial Services & Insurance (22)
+      - name: Events Management (12)
+      - name: Religion (26)
+      - name: Logistics & Transportation (3)
+      - name: Fashion & Retail (8)
+      - name: Professional Services (3)
+      - name: Creative (6)
+      - name: NGOs and Charities (4)
+      - name: Healthcare (2)
+      - name: Real Estate and Construction (21)
+  - title: Style & Themes
+    list: 
+      - name: Bold & Colorful (21)
+      - name: Conservative (14)
+      - name: Elegant (14)
+      - name: Modern & Simple (14)
+      - name: Nature & Landscapes (14)
+      - name: show-more
+    

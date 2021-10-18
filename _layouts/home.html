@@ -1,0 +1,189 @@
+---
+layout: default
+---
+
+<section class="tx-c merch-banner mb-60">
+    <div class="wrapper--x">
+        <div class="sub-header">
+            <h2 class="font-biggest-auto mb-15 co-secondary">{{ page.banner-header }}</h2>
+            <p class="text-big-auto fw-normal mb-40">{{ page.banner-description }}</p>
+            <a class="btn btn--standard" href="/get-started">Get Started</a>
+            <div class="mt-30">
+                <p class="mb-20 f-12">Or</p>
+        
+                <a class="text-big-auto fw-medium d-iflx al-i-c" href="tel:{{ page.banner-phone-number }}">
+                    <svg width="20" height="22" class="mr-10">
+                        <use xlink:href="/uploads/icon-sprite.svg#call-icon"></use>
+                    </svg>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="merch-banner__collage">
+        <!-- <svg class="path" width="1442" height="630" viewBox="0 0 1442 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="path" d="M1441 0C1441 347.387 1118.65 629 721 629C323.355 629 1 347.387 1 0" stroke=""/>
+        </svg> -->
+
+        <div class="merch-wrapper desktop">
+            <div id="merch1" class="merch merch1">
+                <img src="/uploads/merch/CopperT-ShirtWii.png" alt="">
+            </div>
+            <div id="merch2" class="merch merch2">
+                <img src="/uploads/merch/CopperStickersWii.png" alt="">
+                <img src="/uploads/merch/CopperMugWii.png" alt="">
+            </div>
+            <div id="merch3" class="merch merch3">
+                <img src="/uploads/merch/CopperSockWii.png" alt="">
+            </div>
+            <div id="merch4" class="merch">
+                <img src="/uploads/merch/CopperMailer BoxWii.png" alt="">
+            </div>
+            <div id="merch5" class="merch merch5">
+                <img src="/uploads/merch/CopperWaterbottleWii.png" alt="">
+            </div>
+            <div id="merch6" class="merch merch6">
+                <img src="/uploads/merch/PenWii.png" alt="">
+                <img src="/uploads/merch/CopperNotebookWii.png" alt="">
+            </div>
+            <div id="merch7" class="merch">
+                <img src="/uploads/merch/CopperTote Bag BWii.png" alt="">
+            </div>
+        </div>
+
+        <div class="merch-wrapper mob">
+            <div id="merch8" class="merch merch1">
+                <img src="/uploads/merch/CopperT-ShirtWii.png" alt="">
+            </div>
+            <div id="merch9" class="merch merch2">
+                <img src="/uploads/merch/CopperStickersWii.png" alt="">
+                <img src="/uploads/merch/CopperMugWii.png" alt="">
+            </div>
+            <div id="merch11" class="merch merch3">
+                <img src="/uploads/merch/CopperSockWii.png" alt="">
+            </div>
+
+            <div id="merch12" class="merch merch5">
+                <img src="/uploads/merch/CopperWaterbottleWii.png" alt="">
+            </div>
+            <div id="merch13" class="merch merch6">
+                <img src="/uploads/merch/PenWii.png" alt="">
+                <img src="/uploads/merch/CopperNotebookWii.png" alt="">
+            </div>
+            <div id="merch14" class="merch">
+                <img src="/uploads/merch/CopperTote Bag BWii.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include components/partners-logo.html %}
+
+<section class="wrapper--x py-80">
+    <div class="width-auto-fill">
+        <div class="sub-header mb-50">
+            <h2 class="font-medium-auto co-secondary maxwidth-400 mx-auto">Get started with any of our prebuilt packs</h2>
+        </div>
+
+
+
+        {% assign card = site.packs | sort: 'position' %}
+        {% assign cardType = "white" %}
+        {% assign has-list = false %}
+        {% assign words = 15 %}
+        {% assign has-price-tag = true %}
+        {% assign cardGrid = 'col-250 space-30' %}
+        {% include components/cards.html %}
+
+
+        <div class="tx-c mt-50">
+            <span class="divider  mb-15"></span>
+            <p class="mb-30 text-normal-auto">Unsure which option is best for you?</p>
+            <a class="btn btn--standard" href="/build-your-pack">Build your own pack</a>
+        </div>
+    </div>
+
+</section>
+
+<section class="wrapper--x py-80 bg-gray">
+    <div class="maxwidth-750 tx-c mx-auto">
+        <h3 class="font-medium-auto co-secondary">{{ page.package-section-title }}</h3>
+        <p class="p-content lh-30">{{  page.package-section-description }}</p>
+        <div class=" pos-r mx-auto mt-50">
+            <!-- <a class="circle-eye absolute-middle" href="">
+                <span>
+                    <svg width="18" height="14" class="">
+                        <use xlink:href="/uploads/icon-sprite.svg#eye-icon"></use>
+                    </svg>
+                </span>
+                <p class="text-medium-auto tx-c co-primary">Look <br> inside</p>
+            </a> -->
+            <img class="w-100p" src="{{ page.package-section-image }}" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="wrapper--x py-80">
+
+    <div class="width-auto-fill multi-display__container">
+        <div class="multi-display__content">
+            <h4 class="font-big-auto co-secondary">{{ page.wii-pledge }}</h4>
+            <p class="lh-30 text-normal-auto co-codegray pr-60">{{ page.wii-pledge-summary }}</p>
+        </div>
+        <div class="services  multi-display__content">
+
+            
+            {% for entry in page.pledge %}
+            <div class="services--box ">
+                <img src="{{ entry.url }}" alt="{{ entry.name }}">
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    
+</section>
+
+<div>
+    <!-- clsActivated: uk-transition-active; center: true 
+    uk-transition-slide-bottom-medium
+    -->
+</div>
+
+
+<section class="wrapper--x mb-70 pb-20" >
+    <div class="width-auto quote-slider" uk-slider="">
+        <ul class="uk-slider-items">
+            {% for entry in page.slider %}
+            <li class="">
+                <div class="quote-slider__container" uk-slider-parallax="x: 400,0,300; opacity: 1,1,0">
+                    <div class="quote-slider__image ">
+                        <img src="{{ entry.image }}" alt=""></img>
+                    </div>
+                    <div class="quote-slider__content" uk-slider-parallax="x: 400,0,300; opacity: 1,1,0">
+                        <p class="lh-30 text-normal-auto mb-30 quote-slider__content--text">{{ entry.description }}</p>
+                        <p class="mb-20"><span class="fw-medium">{{ entry.name }},</span> <i>{{ entry.company }}</i> </p>
+                        <img class="logo" src="{{ entry.company-logo }}" alt="">
+                        <span class="extra-sheet" uk-slider-parallax="x: 400,0,300; opacity: 1,1,0"></span>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="tx-r ">
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover controls" href="#"  uk-slider-item="previous">
+                <svg width="24" height="24" class="">
+                    <use xlink:href="/uploads/icon-sprite.svg#slider-back-icon"></use>
+                </svg>
+            </a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover controls" href="#"  uk-slider-item="next">
+                <svg width="24" height="24" class="">
+                    <use xlink:href="/uploads/icon-sprite.svg#slider-front-icon"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+

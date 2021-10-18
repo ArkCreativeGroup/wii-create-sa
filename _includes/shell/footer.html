@@ -1,0 +1,125 @@
+
+<footer class="footer wrapper--x">
+    <div class="footer__container">
+
+        <div class="footer__content">
+            <div class="footer__content--first">
+                <div>
+                    <div class="mb-30">
+                        <a href="https://www.facebook.com/Wiicreate" class=""><img class="logo" src="/uploads/wii-create-logo.png" alt="Tixhut Logo"></a>
+                    </div>
+                    <p class="footer__header">Follow us on Social Media:</p>
+                    <ul class="footer__social">
+                        <li>
+                            <a target="_blank" href="">
+                                <svg class="">
+                                    <use xlink:href="/uploads/icon-sprite.svg#facebook-logo"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://twitter.com/wiicreate/">
+                                <svg class="">
+                                    <use xlink:href="/uploads/icon-sprite.svg#twitter-logo"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/wiicreate/">
+                                <svg class="">
+                                    <use xlink:href="/uploads/icon-sprite.svg#instagram-logo"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCOgjxeOMg5ftxrXq-rMpFZw">
+                                <svg class="">
+                                    <use xlink:href="/uploads/icon-sprite.svg#youtube-logo"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__content--second">
+                {% for entry in site.data.footer-nav.footer-list %}
+                
+                <div>
+                    <h4>{{ entry.name }}</h4>
+                    <ul>
+                        {% for subentry in entry.list %}
+                            <li><a href="{{ subentry.url }}">{{ subentry.title }}</a>
+                                {% if subentry.url == '#'%}
+                                <div class="btm-drop" uk-dropdown="mode: click;">
+                                    <div class="pos-r">
+                                        <a class="dropdown_close uk-dropdown-close" href="">
+                                            <svg width="12" height="12" class="cart-close-icon">
+                                                <use xlink:href="/uploads/icon-sprite.svg#cart-close-icon"></use>
+                                            </svg>
+                                        </a>
+                                        <div class="btm-drop__img">
+                                            <img src="/uploads/svg/wavy_lines.svg" alt="">
+                                            <h5 class="font-medium-auto mb-0">Hi there 👋🏽</h5>
+                                            <p>Drop your email and we’ll let you know before everyone else. Our little secret.</p>
+                                        </div>
+                                        <div class="btm-drop__content">
+                                            <form id="apiform"  name="api-form" method="POST" action="/"  data-netlify="true">
+                                                <div class="grid-wrapper col-250 space-20 ">
+                                                    <div class="">
+                                                        <input name="email" class="input" type="email" placeholder="email" required>
+                                                    </div>
+                                                    <div>
+                                                        <button class="btn btn--standard w-100p" type="submit">Submit Enquiry</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        
+                                        <div id="apisuccess" style="display: none;" class="apisuccess">
+                                            <img src="/uploads/svg/wavy_lines.svg" alt="">
+                                            <div class="z-depth-1 tx-c p-20">
+                                                <svg width="65" height="65" class="mb-10">
+                                                    <use xlink:href="/uploads/icon-sprite.svg#emoji-icon"></use>
+                                                </svg>
+                                                <h5 class="font-medium-auto mb-0 co-white">You’re all signed up!</h5>
+                                                <p class="text-normal-auto co-white">You’ll be the first to know when our API is ready for use!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        
+        <div class="footer__info">
+            <p class="mb-15">© WiiCreate 2020</p>
+            
+            <div class="footer__info--link mb-15">
+                <a href="/sitemap">Site Map</a>
+                <a href="/terms-condition">Terms of use</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+    var apiModal = $('#apisuccess')
+
+    $(document).ready(function() {
+        $("#apiform").submit(function(e) {
+            // $("#first").hide();
+            $("#apisuccess").show();
+            // e.preventDefault();
+        });
+    });
+
+</script>

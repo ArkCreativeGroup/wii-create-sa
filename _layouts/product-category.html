@@ -1,0 +1,127 @@
+---
+layout: default
+---
+
+<section class="wrapper--x">
+    <div class="page-intro">
+        <ul class="breadcrumb mb-10">
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">All Products</a>
+            </li>
+            <li>
+                <a href="">Clothing & Apparel</a>
+            </li>
+            <li>
+                <a href="">T-Shirts</a>
+            </li>
+        </ul>
+        <h2 class="font-bigger-auto">T-Shirt Template Gallery</h2>
+    </div>
+
+    <div class="section">
+
+        <div class="side-container">
+            <div class="border-bottom pb-30 mb-30">
+                <div class="bg-gray p-30 tx-c mb-15 radius-5">
+                    <img class="size--w64 d-ibl mb-30" src="/uploads/svg/profile-icon.svg" alt="">
+                    <h3 class="text-big-auto co-primary mb-10">Personalize all the templates</h3>
+                    <p class="text-normal-auto mb-30">Automatically add your name, company details and logo to all of our templates.</p>
+                    <a data-uk-toggle="#preview" class="btn btn--standard" href="">Personalize Preview</a>
+                </div>
+                
+                
+                <div class="bg-gray p-30 flx-center-center radius-5">
+                    <svg class="mr-20" width="54" height="48">
+                        <use xlink:href="/uploads/icon-sprite.svg#upload-icon"></use>
+                    </svg>
+                    <p class="text-medium-auto">Have a design? Drag and drop your design here.</p>
+                </div>
+            </div>
+
+            {% assign filter-list = site.data.filter.filter-category %}
+            {% include components/filter-nav.html %}
+        </div>
+
+        <div class="section__container">
+            <div class="d-flx">
+                <a class="filter-nav__controller input flx-center" href="">filter</a>
+
+                <div class="search flex-1">
+                    <input class="input" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+                    <button class="search__btn">
+                        <svg class="">
+                            <use xlink:href="/uploads/icon-sprite.svg#search-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+                
+            </div>
+
+            <ul class="grid-wrapper space-30 col-250">
+                <li class="card-square">
+                    <div class="card-square__content-alt tx-c">
+                        <div>
+                            <img class="size--h80 d-ibl mb-10" src="/uploads/canva-logo.png" alt="">
+                            <h4 class="co-primary fw-medium text-small-auto mb-10">Design with Canva</h4>
+                            <p  class="text-small-auto mb-20">Drag and drop your design anywhere on this page (.PSD, .JPG, .PNG)</p>
+                            <div>
+                                <a class="arrow" href="">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="card-square">
+                    <div class="card-square__content-alt tx-c">
+                        <div>
+                            <img class="size--h80 d-ibl mb-10" src="/uploads/designer-logo.svg" alt="">
+                            <h4 class="co-primary fw-medium text-small-auto mb-10">Having trouble finding a design?</h4>
+                            <p  class="text-small-auto mb-20">Drag and drop your design anywhere on this page (.PSD, .JPG, .PNG)</p>
+                            <div>
+                                <a class="arrow" href="">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+                <li class="card-square">
+                    <img class="card-square__img" src="" alt="">
+                </li>
+        
+            </ul>
+
+            <div class="tx-c py-50 mb-30">
+                <p class="text-small-auto mb-20">Showing 9 out of 50 templates</p>
+                <a class="btn btn--secondary" href="">Load More</a>
+            </div>
+
+            
+        </div>
+
+    </div>
+</section>
+
+
+{% assign modal-case = "preview" %}
+{% assign modal-header = "Preview templates with your information" %}
+{% assign modal-size = "big" %}
+{% include components/modal.html modal= modal-case %}

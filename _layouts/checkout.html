@@ -1,0 +1,125 @@
+---
+<!-- title: Checkout -->
+<!-- description: -->
+<!-- sitemap: false -->
+layout: default
+---
+{% if page.permalink == "/build-your-pack/checkout" %}
+    {% assign cartType = "buildCart" %}
+    {% assign formType = "build" %}
+    {% assign formName = "Customised order" %}
+    {% assign sendTo = "https://formspree.io/f/xknpzzkd" %}
+{% elsif page.permalink == "/bulk-order/checkout" %}
+    {% assign cartType = "bulkCart" %}
+    {% assign formType = "bulk" %}
+    {% assign formName = "Bulk Merch order" %}
+    {% assign sendTo = "https://formspree.io/f/xgepzzrb" %}
+{% else %}
+
+{% endif %}
+<!-- {% if page.wave == 'bulk-order' %}
+        {% assign cartType = "bulkCart" %}
+        {% assign checkoutUrl = "bulk-order" %}
+    {% elsif page.wave == 'build-pack' %}
+        {% assign checkoutUrl = "build-your-pack" %}
+    
+{% endif %} -->
+<div class="wrapper--x merch-banner">
+    <div class="sub-header tx-c mb-120">
+        <h2 class="font-big-auto co-secondary">Checkout</h2>
+    </div>
+  <div class="multi-display__container width-auto-fill flx-inverse al-i-fs">
+    <div class="multi-display__content">
+      <div class="summary-box">
+        <h3 class="font-small-auto mb-30 pb-20 lh-1-h border-bottom">Order Summary</h3>
+        <div class="simplecart-area">
+          <div class="simplecart-cart">
+            <!-- <div class="simpleCart_items"></div> -->
+            <div class="{{cartType}}_items"></div>
+              <!-- <div class="dropdown__divider  mb-15">
+                  <p class="text-medium-auto co-primary">Quantity <span class="fw-normal f-12">(Min. 25 packs)</span></p>
+              </div>
+              <div class="mb-5">
+                  <p class="text-small-auto tx-c">Price per pack: ₦ 10,900</p>
+              </div>
+              <div class="flx-center-space-wrap">
+                  <span class="my-15">Total (excl. Tax & Shipping):</span>
+                  <span class="text-medium-auto my-15">₦ 72,090</span>
+              </div> -->
+            <div class="d-flx-space mt-30">
+              <div class=" flex-1 mr-15">
+                  <input class="input adjustable" type="text" placeholder="Promo code">
+              </div>
+              <div>
+                <a class="btn btn--standard" href="">Apply</a>
+              </div>
+            </div>
+            <ul class="py-30 border-bottom border-top my-30">
+              <li class="flx-center-space-wrap mb-15">
+                <p>Subtotal:</p>
+                {% if page.permalink == '/build-your-pack/checkout' %} 
+                <p  class="{{cartType}}_totalInqty"></p>
+                {% else %} 
+                <p class="{{cartType}}_total"></p>
+                {% endif %}
+              </li>
+              <!-- <li class="flx-center-space-wrap mb-15">
+                <p>Shipping:</p>
+                <p class="{{cartType}}_shipping"></p>
+              </li> -->
+              <li class="flx-center-space-wrap">
+                <p>Taxes (7.5% VAT):</p>
+                <p class="{{cartType}}_tax"></p>
+              </li>
+            </ul>
+            <div class=" flx-center-space-wrap">
+              <p>Total: </p>
+              <span class="{{cartType}}_grandTotal text-bigger-auto co-secondary" id=""></span>
+              <!-- <div><p class="my-15">Grand Total: </p><span class="simpleCart_quantity"></span></div>
+              <div>items - <span class="simpleCart_total"></span></div> -->
+               
+            </div>
+            <!-- <a class="button right" href="/checkout/">Checkout</a> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="multi-display__content">
+      <h3 class="font-small-auto mb-30 pb-30 lh-1-h border-bottom">Contact Details</h3>
+      <form class="maxwidth-590 mx-auto {{ formType }}Form" name="{{ formName }}" data-netlify-honeypot="bot-field" action="{{ sendTo }}" method="POST"  data-netlify="true">
+        <!-- <input type="hidden" name="_replyto"> -->
+        <div class="flex-grid space-15">
+          <div class="">
+              <input class="input" name="company" type="text" placeholder="Company Name" required>
+          </div>
+          <div class="half-flex">
+              <input class="input" name="firstname" type="text" placeholder="First Name" required>
+          </div>
+          <div class="half-flex">
+              <input class="input" name="lastname" type="text" placeholder="Last Name" required>
+          </div>
+          <div class="">
+              <input class="input" name="email" type="email" placeholder="Email Address" required>
+          </div>
+          <div class="">
+              <input class="input" name="number" type="text" placeholder="Phone Number" required>
+          </div>
+          <div style="display: none;" class="to-hide {{ formType }}Formdiv"></div>
+          <div>
+            
+
+            
+            <!-- <input type="hidden" name="_to" value="">
+            <input type="text" name="_gotcha" style="display: none;"> -->
+              <button class="btn btn--standard w-100p simpleCart_checkout" type="submit">Place Order</button>
+          </div>
+          <div>
+            <p class="tx-c"><i>You will get design mockups and a quote after placing your order.</i></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+---
+more-options:
+- title: Build your own pack
+  description: With a wide range of products from our catalog, building your custom
+    box gives you the freedom to thoughtfully curate unique items that truly represent
+    your brand.
+  url: "/build-your-pack"
+  featured_image_path:
+  - "/uploads/for-build.png"
+  quantity:
+  - '25'
+- title: Buy Bulk Merch
+  description: We understand that certain occasions require you to buy promotional
+    products without any special packaging. You can select any product from our wide
+    offerings and buy in bulk.
+  url: "/bulk-order"
+  featured_image_path:
+  - "/uploads/for-bulk.png"
+  quantity:
+  - '25'

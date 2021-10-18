@@ -1,0 +1,178 @@
+// 
+    // Base
+
+    // @package eyowo
+    // @author  Rahman Are <psybug>
+    // @version 1.0.0
+
+// Resets
+
+@font-face
+  font-family: 'serif'
+  src: url('/uploads/fonts/body.ttf')
+@font-face
+  font-family: 'sans-serif'
+  src: url('/uploads/fonts/heading.otf')
+
+// @font-face
+//     font-family: 'Jazmin'
+//     src: url('/uploads/fonts/Jazmin-Regular.woff2') format('woff2'), url('/uploads/fonts/Jazmin-Regular.woff') format('woff')
+//     font-weight: normal
+//     font-style: normal
+//     font-display: swap
+// @font-face
+//     font-family: 'Jazmin'
+//     src: url('/uploads/fonts/Jazmin-Medium.woff2') format('woff2'), url('/uploads/fonts/Jazmin-Medium.woff') format('woff')
+//     font-weight: 500
+//     font-style: normal
+//     font-display: swap
+    
+// @font-face
+//     font-family: 'Jazmin'
+//     src: url('/uploads/fonts/Jazmin-Bold.woff2') format('woff2'), url('/uploads/fonts/Jazmin-Bold.woff') format('woff')
+//     font-weight: bold
+//     font-style: normal
+//     font-display: swap
+
+@font-face
+    font-family: 'Mark Pro'
+    src: url('/uploads/fonts/MarkPro-Bold.eot')
+    src: url('/uploads/fonts/MarkPro-Bold.eot?#iefix') format('embedded-opentype'), url('/uploads/fonts/MarkPro-Bold.woff2') format('woff2'), url(/uploads/fonts/'MarkPro-Bold.woff') format('woff')
+    font-weight: bold
+    font-style: normal
+    // font-display: swap
+
+@font-face
+    font-family: 'Mark Pro'
+    src: url('/uploads/fonts/MarkPro.eot')
+    src: url('/uploads/fonts/MarkPro.eot?#iefix') format('embedded-opentype'), url('/uploads/fonts/MarkPro.woff2') format('woff2'), url('/uploads/fonts/MarkPro.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: 'Mark Pro'
+    src: url('/uploads/fonts/MarkPro-Medium.eot')
+    src: url('/uploads/fonts/MarkPro-Medium.eot?#iefix') format('embedded-opentype'), url('/uploads/fonts/MarkPro-Medium.woff2') format('woff2'), url('/uploads/fonts/MarkPro-Medium.woff') format('woff')
+    font-weight: 500
+    font-style: normal
+    font-display: swap
+
+
+@font-face
+    font-family: 'Noe Display'
+    src: url('/uploads/fonts/NoeDisplay-Medium.woff2') format('woff2'), url('/uploads/fonts/NoeDisplay-Medium.woff') format('woff')
+    font-weight: 500
+    font-style: normal
+    font-display: swap
+
+
+
+
+
+html
+    font-size:                  $basefont
+    color:                  $codegray
+    background-color:           #ffffff
+
+*,
+*::before,
+*::after
+    box-sizing:                 border-box
+
+*
+    outline-color:              inherit
+    outline:                    none
+    a
+        outline:                none
+    button
+        outline:                none
+
+body
+    margin:                     0
+    font-family:                $bodyfont
+    font-size:              $normalfont
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    line-height: normal 
+    overflow-x: hidden
+
+p
+    margin:                     0
+
+a,
+.as-link
+    text-decoration:            none
+    cursor:                     pointer
+    color:                      unset
+    transition:                 all 0.32s ease-out
+    &:focus, &:hover
+        text-decoration:        none
+        // color:                  unset
+        color:                  $primarycolor
+header nav a:hover
+    // color:              $primarycolor
+
+audio, canvas, img, video
+    display:                    block
+    max-width:                  unset
+
+
+svg
+    pointer-events:             none
+    vertical-align:             middle
+    fill:                       inherit
+    // transition:                 all 0.32s ease
+
+ul
+    padding:               0
+    list-style:                 none
+    margin:                 0
+
+
+
+// Buttons, Inputs, 
+button
+    outline:                    none
+    &[type="button"]
+        box-sizing:             content-box
+        background:             none
+        border:                 0
+        border-radius:          0
+        color:                  inherit
+        cursor:                 pointer
+        overflow:               visible
+        padding:                0
+        font:                   inherit
+    &::-moz-focus-inner
+        border:                 0
+        padding:                0
+
+input
+    &[type="email"],
+    &[type="submit"],
+    &[type="reset"],
+    &[type="button"]
+        // box-sizing:             content-box
+        // background:             none
+        // border:                 0
+        // color:                  inherit
+        // font-size:              inherit
+        // font-family:            inherit
+        // font-style:             normal
+        // line-height:            normal
+        // overflow:               visible
+        // padding:                0
+        // -webkit-user-select:    none
+        // -webkit-appearance:     none
+        &::-moz-focus-inner
+            border:             0
+            padding:            0
+    &[type="button"],
+    &[type="submit"]
+        cursor:                 pointer
+
+// .header-padding
+//     padding-top: 100px
+//     padding-bottom: 100px
+

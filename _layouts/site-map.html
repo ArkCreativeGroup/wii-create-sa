@@ -1,0 +1,31 @@
+---
+layout: default-dark
+---
+{% assign banner-size = "small" %}
+{% include components/banner.html %}
+
+<section class="wrapper--x py-80 mb-70">
+    <div class="width-auto-fill mx-auto">
+        <ul class="grid-wrapper col-250 space-20">
+            {% for item in site.data.sitemap.list %}
+            <!-- <option {% if item == '50' %}selected{% endif %} value="{{ item }}">{{ item }} {% if item == '50' %}Recomended{% endif %}</option> -->
+            <li>
+                {% if item.url %}
+                <a class="text-medium-auto co-primary" href="{{ item.url }}">{{ item.title }}</a>
+                {% else %}
+                <p class="text-medium-auto co-primary">{{ item.title }}</p>
+                {% endif %}
+                {% if item.sublist %}
+                <ul>
+                    {% for subitem in item.sublist %}
+                    <li class="mb-10 mt-10">
+                        <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

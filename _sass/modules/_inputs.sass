@@ -1,0 +1,351 @@
+select
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	padding: 5px
+	height: auto
+
+	
+
+.date-range
+	position: relative
+	&.automatic
+		position: absolute
+		top: 50%
+		right: 25px
+		transform: translateY(-50%)
+		@media #{ $smalldown }
+			top: 100%
+			transform: translateY(15px)
+
+	&__calendar, &__caret
+		position: absolute
+		left: 10px
+		transform: translateY(-50%)
+		top: 50%
+	&__caret
+		left: auto
+		right: 10px
+	&__input
+		padding: 8px 20px 8px 40px
+		background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%)
+		box-shadow: 0px 1px 1px rgba(22, 29, 37, 0.05), inset 0px 2px 0px rgba(255, 255, 255, 0.05)
+
+.input-caret
+	display: inline-block
+	width: 0
+	height: 0
+	border: 5px solid transparent
+	border-top-color: #3E3F42
+	position: absolute
+	right: 14px
+	bottom: 13px
+	z-index: 2
+
+.input, .select
+	position: relative
+	z-index: 1
+	display: inline-block
+	width: 100%
+	vertical-align: top
+	background: $graycolor
+	border: $borderline
+	border-radius: 8px
+	min-height: 72px
+	padding: 15px 20px
+	color: $primarycolor
+	@extend .text-small-auto, .fw-medium
+	font-weight: normal
+	font-family: $bodyfont
+	@media #{ $smalldown }
+		min-height: 52px
+		font-size: 1.6rem
+	&.adjustable
+		min-height: 100%
+		background-color: #ffffff
+	&:placholder
+		color: $litecolor
+	&:focus 
+		outline: none
+		border-color: $primarycolor
+	.tool
+		position: absolute
+		right: 15px
+		bottom: 15px
+		color: #aaaaaa
+	&.as-name
+		@extend .input-with-icon
+		background: url("/uploads/svg/icon-profile.svg") no-repeat
+	&.as-number
+		@extend .input-with-icon
+		background: url("/uploads/svg/icon-phone.svg") no-repeat
+	&.as-email
+		@extend .input-with-icon
+		background: url("/uploads/svg/icon-message.svg") no-repeat
+	&.as-address
+		@extend .input-with-icon
+		background: url("/uploads/svg/icon-pin.svg") no-repeat
+	&.as-upload
+		@extend .input-with-icon
+		background: url("/uploads/svg/icon-upload.svg") no-repeat
+
+.input-with-icon
+	padding-left: 70px
+	background-size: 20px
+	background-position: 30px 50%
+	background-color: $graycolor
+	@media #{ $xxlargeup }
+		background-size: 24px
+		background-position: 40px 50%
+		padding-left: 85px
+.select
+	@extend .has-drop-icon
+
+.has-drop-icon
+	background: url("/uploads/svg/dropdown.svg") no-repeat
+	background-position: calc(100% - 20px) 50%
+	background-size: 16px 10px
+	background-color: #ffffff
+	
+.search
+	position: relative
+	input
+		padding-right: 56px
+	&__btn
+		position: absolute
+		right: 0
+		top: 0
+		z-index: 1
+		background: none
+		border: none
+		height: 100%
+		width: 60px
+		display: flex
+		align-items: center
+		justify-content: center
+		opacity: 0.8
+		@media #{ $xxlargeup }
+			width: 72px
+		&:hover
+			opacity: 1
+		svg
+			width: 20px
+			height: 20px
+			@media #{ $xxlargeup }
+				width: 22px
+				height: 22px
+	&--dropdown
+		width: 100%
+		padding: 20px
+		@media #{ $smalldown }
+			padding: 20px
+	// &__field
+	// 	&:focus 
+	// 		outline: none
+	// &__error-message
+	// &__with-errors
+	// &__with-errors
+	// 	.input__error-message
+	// &__label 
+	// 	display: inline-block
+	// 	display: flex
+	// 	align-items: flex-start
+	// 	-webkit-font-smoothing: antialiased
+	// 	-moz-osx-font-smoothing: grayscale
+	// 	-webkit-touch-callout: none
+	// 	-webkit-user-select: none
+	// 	-khtml-user-select: none
+	// 	-moz-user-select: none
+	// 	-ms-user-select: none
+	// 	user-select: none
+
+
+@-webkit-keyframes anim-1 
+	50% 
+		opacity: 0
+		-webkit-transform: translateY(10px)
+		transform: translateY(10px)
+	
+	51% 
+		opacity: 0
+		-webkit-transform: translateY(10px)
+		transform: translateY(10px)
+	
+	100% 
+		opacity: 1
+		-webkit-transform: translateY(0)
+		transform: translateY(0)
+	
+
+
+@keyframes anim-1 
+	50% 
+		opacity: 0
+		-webkit-transform: translateY(10px)
+		transform: translateY(10px)
+	
+	51% 
+		opacity: 0
+		-webkit-transform: translateY(10px)
+		transform: translateY(10px)
+	
+	100% 
+		opacity: 1
+		-webkit-transform: translateY(0)
+		transform: translateY(0)
+
+.checkbox
+	display: flex
+	align-items: center
+	@extend .text-normal-auto
+	color: #4F4F4F
+	cursor: pointer
+	.tick
+		width: 20px
+		height: 20px
+		display: inline-block
+		border: 1px solid #D6D6D6
+		border-radius: 3px
+		position: relative
+		background-color: #ffffff
+		box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.03)
+		&:after
+			content: ''
+			display: inline-block
+			width: 10px
+			height: 10px
+			background: url("/uploads/checkmark.svg") no-repeat
+			background-size: 10px 10px
+			// border-radius: 2px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			position: absolute
+	.checktext
+		color: $codegray
+		// font-weight: 500
+	input
+		display: none
+		&:checked + .tick
+			border-color: $primarycolor
+			background-color: $primarycolor
+		&:checked + .tick:after
+			background-color: $primarycolor
+		&:checked + .tick:before
+			display: inline-block
+		&:checked ~ .checktext
+			// font-weight: 500
+			color: $primarycolor
+
+.selector
+	&__box
+		border: $borderline
+		padding: 20px
+		border-radius: 5px
+		// border-width: 2px
+		.image
+			height: 120px
+			width: 100%
+			background-color: $graycolor
+			object-fit: cover
+			margin-bottom: 15px
+		.image-box
+			min-height: 120px
+			width: 100%
+			margin-bottom: 15px
+			// padding: 20px
+			@extend .flx-center-center
+		.title
+			@extend .text-normal-auto
+			color: $codegray
+			font-weight: 500
+			margin-bottom: 0
+		.text
+			margin-top: 7px
+			color: $codegray
+			opacity: 0.7
+			@media #{ $xxlargeup }
+				margin-top: 10px
+		.icon
+			color: $codegray
+			opacity: 0.7
+		.pallete
+			display: block
+			width: 35px
+			height: 35px
+			border: $borderline
+			border-radius: 50%
+			margin-bottom: 10px
+			@media #{ $xxlargeup }
+				width: 40px
+				height: 40px
+	input
+		display: none
+		&:checked + .selector__box, &:checked + .selector__box .pallete
+			border-color: $primarycolor
+			// border-width: 2px
+		&:checked + .selector__box .title
+			color: $primarycolor
+		&:checked + .selector__box .text, &:checked + .selector__box .icon
+			opacity: 1
+.is-recomended
+	position: relative
+	margin-top: 50px
+	&::after
+		content: 'Recommended'
+		color: #ffffff
+		display: inline-flex
+		background: #51B74A
+		justify-content: center
+		align-items: center
+		position: absolute
+		bottom: 100%
+		left: 0
+		height: 50px
+		width: 100%
+		border-top-left-radius: 5px
+		border-top-right-radius: 5px
+		font-weight: 500
+	.selector__box
+		border-top-left-radius: 0
+		border-top-right-radius: 0
+
+
+.size-input
+	height: 52px
+	display: inline-flex
+	border: $borderline
+	background: none
+	overflow: hidden
+	align-items: center
+	border-radius: 5px
+	@media #{ $xxlargeup }
+		height: 56px
+	&__label
+		height: 100%
+		display: flex
+		align-items: center
+		padding: 0 20px
+		background-color: $graycolor
+		border-right: $borderline
+		@extend .text-medium-auto
+		color: $codegray
+	&__feild
+		height: 100%
+		padding: 0 0px 0 10px
+		border: none
+		width: auto
+		min-width: 70px
+		width: 0
+		text-align: center
+		@extend .text-medium-auto
+		color: $primarycolor
+
+.qty-field
+	@extend .text-medium-auto
+	padding: 5px 15px 5px 5px
+	background-position: 100%
+	font-family: $contentfont
+	color: $primarycolor
+	background-size: 13px 10px
+	border: none

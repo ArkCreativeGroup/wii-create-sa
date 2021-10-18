@@ -1,0 +1,10 @@
+- name: Payment
+  link: /
+- name: Pay Bills
+  link: /bills/
+- name: Cash Out
+  link: /cashout/
+- name: Transaction History
+  link: /history/
+- name: Transaction History
+  link: /history/

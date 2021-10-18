@@ -1,0 +1,126 @@
+---
+layout: default
+---
+
+<section class="wrapper--x mt-50 m-0--medium">
+    
+
+    {% assign fliter-list = site.categories | sort:'position' %}
+    <div class="section">
+
+        <div class="side-container">
+            <div class="flex-1 filter-nav__wrapper">
+                <ul class="side-nav">
+                    {% for entry in fliter-list %}
+                    <li>
+                        <a data-scroll-nav="{{ forloop.index0 }}" class="{% if forloop.first %}is-active{% endif %}" href="">{{ entry.title }}
+                            <img src="{{ entry.img }}" alt="{{ entry.title }}">
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="section__container">
+            
+            <ul class="switcher-list" >
+                
+                {% assign card = site.products %}
+                {% if page.view == 'bulk-order' %}
+                        {% assign cartType = "bulkCart" %}
+                        {% assign checkoutUrl = "bulk-order" %}
+                    {% elsif page.view == 'build-pack' %}
+                        {% assign cartType = "buildCart" %}
+                        {% assign checkoutUrl = "build-your-pack" %}
+                    {% else %}
+                        {% assign cartType = "simpleCart" %}
+                {% endif %}
+                {% for entry in fliter-list %}
+                <li class="section__list" data-scroll-index="{{ forloop.index0 }}">
+                    <div class="flx-center-space-wrap border-bottom pb-20 mb-25">
+                        <h2 class="font-medium-auto co-secondary my-10">{{ entry.description }}</h2>
+                        {% if forloop.first %}
+                        <a class="btn btn--standard" href="/{{checkoutUrl}}/checkout">
+                            <span class="pos-r mr-10">
+                                <span class="cart-button__number {{ cartType }}_quantity"></span>
+                                <svg width="24" height="22" class="cart-icon">
+                                    <use xlink:href="/uploads/icon-sprite.svg#cart-icon"></use>
+                                </svg>
+                            </span>
+                        Complete Order</a>
+                        {% endif %}
+                    </div>
+                    {% include components/product-card.html %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<div class="wrapper--x cart-btn-holder">
+    <div class="width-auto-fill pos-r">
+        <a id="cart-menu" class="cart-button" href="">
+            <span class="cart-button__number {{ cartType }}_quantity"></span>
+            <svg width="28" height="26" class="cart-icon">
+                <use xlink:href="/uploads/icon-sprite.svg#cart-icon"></use>
+            </svg>
+            <svg width="28" height="26" class="cart-close-icon">
+                <use xlink:href="/uploads/icon-sprite.svg#cart-close-icon"></use>
+            </svg>
+        </a>
+
+        <div class="dropdown" data-uk-dropdown="mode: click; pos: top-right; animation: uk-animation-slide-top-small;">
+            <div class="dropdown__head">
+                <h4 class="text-medium-auto co-primary">Your Branded Pack</h4>
+            </div>
+            <div class="simplecart-area">
+                <div class="simplecart-cart {{ cartType }}_board">
+
+                  <div class="{{ cartType  }}_items wii-product-item"></div>
+                    {% if page.view == 'bulk-order' %}
+                        
+                    {% elsif page.view == 'build-pack' %}
+                    <div class="dropdown__divider  mb-15 d-flx-space">
+                        <p class="text-medium-auto co-primary">Quantity <span class="fw-normal f-12">(Min. 25 packs)</span></p>
+                        <select class="text-medium has-drop-icon qty-field" name="" id="buildQuantity">
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="250">250</option>
+                            <option value="500">500</option>
+                        </select>
+                    </div>
+                    <div class="mb-5">
+                        <p class="text-small-auto tx-c">Price per pack: <span class="{{ cartType }}_total"></span></p>
+                    </div>
+                    {% else %}
+                        
+                    {% endif %}
+                    <div class="flx-center-space-wrap">
+                        <span class="my-15">Total (excl. Tax & Shipping):</span>
+                        {% if page.view == 'build-pack' %}
+                        <span class="text-medium-auto my-15 {{ cartType }}_buildgrandTotal" id="buildgrandTotal"></span> 
+                        <!-- <span class="{{ cartType }}_packTotal"></span> -->
+                        {% else %}
+                        <span class="text-medium-auto my-15 {{ cartType }}_total"></span> 
+                        {% endif %}
+                    </div>
+                  <!-- <div class="simplecart-total">
+                    <p>Grand Total: </p><span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+                  </div>
+                  <a class="button right" href="/checkout/">Checkout</a> -->
+                </div>
+
+                <div class="empty-state {{ cartType }}_emptystate" style="display: none;">
+                    <p>Cart is empty, Please add products</p>
+                </div>
+              </div>
+              
+        </div>
+        <!-- <a href="/cart/" id="cart-menu">Cart <span class="fa fa-shopping-cart"></span> (<span class="simpleCart_quantity"></span>)</a> -->
+    </div>
+</div>

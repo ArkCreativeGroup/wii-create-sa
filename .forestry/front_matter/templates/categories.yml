@@ -1,0 +1,16 @@
+---
+label: Categories
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: file
+  name: img
+  label: img
+- type: text
+  name: position
+  label: position
+- type: text
+  name: description
+  label: description

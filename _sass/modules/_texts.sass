@@ -1,0 +1,133 @@
+// 
+    // Text Decorations
+
+    // @package eyowo
+    // @author  Tonye Dickson <psybug>
+    // @version 1.0.0
+
+// Texts a
+.tx-c
+    text-align:                 center
+.tx-r
+    text-align:                 right
+.tx-l
+    text-align:                 left
+// Texts 
+.p-font
+    font-family: $contentfont
+    margin: 0
+
+
+// Sizes
+.picotext, .f-12
+    font-size:                  $font12
+.microtext, .f-16
+    font-size:                  $font16
+.smalltext, .f-18
+    font-size:                  $font18
+.f-21
+    font-size:                  $font21
+.mediumtext
+    font-size:                  $mediumfont
+.largetext, .f-30
+    font-size:                  $font30
+.nanotext, .f-14
+    font-size:                  $font14
+
+.f-28
+    font-size:                  2.8rem
+
+
+// line heights
+.lh-1-h
+    line-height: 1.3rem
+
+.lh-22, .p-content
+    line-height: 2.2rem
+
+.lh-30
+    line-height: 3rem
+
+.lh-25
+    line-height: 25px
+
+.ls-1
+    letter-spacing: 1px
+
+
+// text underline
+.underline
+    text-decoration: underline
+
+
+
+
+// Headings
+h1, h2, h3, h4, h5, h6
+    font-weight:                bold
+    margin:                     0
+    font-family:                $contentfont
+    line-height:                normal
+
+.heading
+    font-family:                $headingfont
+
+.h1
+    font-size:                  3.2rem
+    @media #{ $smallup }
+        font-size:              6.4rem
+
+.h2
+    font-size:                  2.4rem
+    @media #{ $smallup }
+        font-size:              4rem
+
+h3, .h3
+    font-size:                  1.8rem
+
+
+.content 
+    p, ul li
+        margin-bottom: 20px
+        @extend .text-normal-auto
+        line-height: 200%
+    ul li
+        padding-left: 40px
+        margin-bottom: 15px
+    h3
+        @extend .text-medium-auto
+        color: $secondarycolor
+        margin-top: 50px
+        margin-bottom: 10px
+    strong
+        font-family: $contentfont
+        font-weight: 500
+        
+
+.section-title
+    padding-bottom:             $space
+    +caps( $smallfont, uppercase, 2px )
+    color:                      $primarycolor
+    border-bottom:              $borderline
+    margin-bottom:              $space-md
+
+.fw-bold
+    font-weight: bold
+.fw-normal
+    font-weight: normal
+.fw-medium
+    font-weight: 500
+
+
+
+.view-more
+    display:                    flex
+    align-items:                center
+    line-height:                0
+    text-transform:             capitalize
+    font-size:                  96%
+    letter-spacing:             1px
+
+// Uppercase
+.uppercase, .caps
+    text-transform:             uppercase

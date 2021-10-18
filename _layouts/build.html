@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="mb-70 merch-banner wrapper--x ">
+    <div class="sub-header mb-70">
+        <h2 class="font-big-auto co-secondary tx-c maxwidth-470 mx-auto">Before you begin, here are a few things to note:</h2>
+        <div class="d-ibl mx-auto tx-l mb-30">
+            {% assign lists = page.prenop-list %}
+            {% include components/list-mark.html %}
+        </div>
+        <div class="mb-40">
+            <a  class="btn btn--standard" href="/build-your-pack/products">Start Building</a>
+        </div>
+        <div class="img-fit img-fit__landscape-alt">
+            <img class="contain" src="{{ page.collage-image }}" alt="">
+        </div>
+    </div>
+    
+    {% include components/partners-logo.html %}
+</div>
+
+<div class="bg-gray wrapper--x py-80">
+    <h2 class="font-medium-auto tx-c mb-30">Build a branded pack in 3 easy steps</h2>
+    <div class="multi-display__container al-i-fs">
+        <div class="multi-display__content">
+            <div class="img-fit img-fit__landscape-alt">
+                <img class="contain" src="{{ page.collage-image2 }}" alt="">
+            </div>
+        </div>
+        <div class="multi-display__content pt-30">
+            <ul class="numbered-list maxwidth-400 mb-40">
+                {% for entry in page.hack-list %}
+                <li>
+                    <span class="numbered-list__index">{{ forloop.index }}</span>
+                    <h3 class="text-medium-auto co-secondary mb-5">{{ entry.title }}</h3>
+                    <p class="text-normal-auto"> {{ entry.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <a  class="btn btn--standard" href="/build-your-pack/products">Start Building</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="wrapper--x py-80 mb-40">
+    <div class="maxwidth-750 mx-auto">
+        <h2 class="font-medium-auto tx-c mb-30">Frequently Asked Questions</h2>
+        {% include components/accordion.html %}
+    </div>
+</section>
+
+
+{% include components/footer-banner.html %}

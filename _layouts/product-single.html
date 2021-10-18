@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="wrapper--x py-50">
+    
+    <section class="width-auto-fill multi-display__container al-i-fs">
+        <div class="multi-display__content">
+            <div style="display: none;" class="product-image">
+                <img id="prodct-image" class="prodct-image" src="{{ page.featured_image_path.first }}" alt="">
+            </div>
+
+            <div uk-slider>
+                <ul class="uk-slider-items">
+                    {% for item in page.featured_image_path %}
+                    <li class="product-image">
+                        <img src="{{ item }}" alt="" class="" >
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <div class="px-10">
+                    <ul class="uk-slider-items product-slider__ctrl">
+                        {% for item in page.featured_image_path %}
+                        <li uk-slider-item="{{ forloop.index0 }}">
+                            <a href=""><img src="{{ item }}" alt="" class="" ></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="multi-display__content">
+            {% assign list = site.data.list.breadcrumb-nav %}
+            {% include components/breadcrumb.html %}
+
+            <div class="border-bottom pb-20 mb-40">
+                <h2 class="text-bigger-auto mb-10 co-secondary"><span id="prodct-name">{{ page.title }}</span> - ₦<span id="prodct-price">{{ page.price }}</span></h2>
+                <div class="content co-primary">
+                    {{ page.description | markdownify }}
+                </div>
+            </div>
+            <div class="border-bottom  pb-40 mb-40 maxwidth-470">
+                <h3 class="text-big-auto co-primary mb-15">This pack includes: </h3>
+                {% assign lists = page.options %}
+                {% assign extraclass = 'grid-wrapper space-20 col-200 lite maxwidth-470' %}
+                {% include components/list-mark.html %}
+            </div>
+
+
+            <div class="mb-40">
+                <h2 class="text-big-auto co-primary mb-15">How many packs would you like to order</h2>
+                
+
+                <div>
+                    <select class="select" name="" id="prodct-qty">
+                        {% for item in page.quantity %}
+                        <option {% if item == '50' %}{% endif %} value="{{ item }}">{{ item }} {% if item == '50' %}Recomended{% endif %}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn--standard" id="item-adder" href="/checkout">Order this Pack</a>
+            </div>
+        </div>
+    </section>
+    
+</div>

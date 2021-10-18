@@ -1,0 +1,51 @@
+---
+brand-list:
+- name: aella
+  logo: "/uploads/brands/aella.png"
+- name: Bamboo
+  logo: "/uploads/brands/bamboo.png"
+- name: Cowrywise
+  logo: "/uploads/brands/cowrywise.png"
+- name: Eyowo
+  logo: "/uploads/brands/eyowo.png"
+- name: Farmforte
+  logo: "/uploads/brands/farmforte.png"
+- name: Flutterwave
+  logo: "/uploads/brands/flutterwave.png"
+- name: Fundall
+  logo: https://res.cloudinary.com/ark-creative-agency/image/upload/v1621846924/wii-create/uploads/32549618-996C-4605-B540-88ED485B4BE4_yysvzd.png
+- name: gradely
+  logo: "/uploads/brands/gradely.png"
+- name: Instadeep
+  logo: "/uploads/brands/instadeep.png"
+- name: Kuda Bank
+  logo: "/uploads/brands/kuda_bank.png"
+- name: Paystack
+  logo: "/uploads/brands/paystack.png"
+- name: Piggyvest
+  logo: "/uploads/brands/piggyvest.png"
+- name: Rise
+  logo: "/uploads/brands/rise.png"
+- name: Schoolable
+  logo: "/uploads/brands/schoolable.png"
+- name: send
+  logo: "/uploads/brands/send.png"
+- name: Thrive Agric
+  logo: "/uploads/brands/thrive_agric.png"
+- name: Truppr
+  logo: "/uploads/brands/truppr.png"
+brand-list-alt:
+- name: Cowrywise
+  logo: "/uploads/brands/cowrywise.png"
+- name: Eyowo
+  logo: "/uploads/brands/eyowo.png"
+- name: Flutterwave
+  logo: "/uploads/brands/flutterwave.png"
+- name: Fundall
+  logo: https://res.cloudinary.com/ark-creative-agency/image/upload/v1621846924/wii-create/uploads/32549618-996C-4605-B540-88ED485B4BE4_yysvzd.png
+- name: Kuda Bank
+  logo: "/uploads/brands/kuda_bank.png"
+- name: Paystack
+  logo: "/uploads/brands/paystack.png"
+- name: Piggyvest
+  logo: "/uploads/brands/piggyvest.png"

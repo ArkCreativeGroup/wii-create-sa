@@ -1,0 +1,156 @@
+.banner
+    height: 300px
+    background-color: $primarycolor
+    position: relative
+    &.secondary
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        background-color: $graycolor
+        @media #{ $smalldown}
+            height: 200px
+    @media #{ $smallup}
+        height: 400px
+    @media #{ $xxlargeup}
+        height: 600px
+    &__image
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__content
+        height: inherit
+        display: flex
+        flex-direction: column
+        justify-content: center
+        position: relative
+        z-index: 2
+        @extend .wrapper--x, .width-auto
+        @media #{ $smallup}
+            // margin-left: 4%
+        .secondary & 
+            align-items: flex-start
+            max-width: 1100px
+            width: 100%
+        &--text
+            color: #ffffff
+            @extend  .text-normal-auto
+            max-width: 550px
+            margin-bottom: 30px
+            &.alt
+                color: $secondarycolor
+    &__header
+        color: #ffffff
+        @extend  .font-bigger-auto
+        // margin-bottom: 30px
+    &__text
+        font-weight: 500
+        letter-spacing: 0.1em
+        color: #FFC50F
+        margin-bottom: 5px
+    &__input
+        max-width: 800px
+        // @media #{ $xxlargeup}
+        //     max-width: 530px
+    &--search-list
+        display: flex
+        align-items: center
+        // margin-bottom: 5px
+        padding: 7px
+        &:hover
+            background-color: $graycolor
+        img
+            object-fit: contain
+            width: 70px
+            height: 52px
+            background-color: #dddddd
+            margin-right: 15px
+            @media #{ $xxlargeup}
+                width: 80px
+                height: 72px
+        div
+            flex: 1
+
+
+.merch-banner
+    padding-top: 50px
+    overflow: hidden
+    @media #{ $smallup}
+        padding-top: 110px
+    &__collage
+        height: 300px
+        // background-color: #dddddd
+        position: relative
+        margin-top: 50px
+        margin-bottom: 50px
+        @media #{ $smalldown}
+            height: 200px
+    .path
+        position: absolute
+        width: 100%
+        bottom: 30%
+        left: 0
+    .merch
+        width: 300px
+        // height: 200px
+        // background-color: #000000
+        position: absolute
+        top: 0
+        left: -150px
+        // transform: rotate(40deg)
+        transform-origin: 50% -40vw
+        // opacity: 0
+        @media #{ $smalldown}
+            transform-origin: 50% -40vw
+            width: 80px
+            left: -50px
+        &.merch2
+            width: 150px
+            padding-top: 50px
+            @media #{ $smalldown}
+                width: 80px
+        &.merch3, &.merch5, &.merch6
+            width: 200px
+            @media #{ $smalldown}
+                width: 80px
+        &.merch5
+            padding-top: 50px
+            
+        img
+            width: 100%
+
+    
+.merch-wrapper
+    position: absolute
+    top: 10%
+    left: 50%
+    transform: translateX(-50%)
+    &.desktop
+        @media #{ $smalldown}
+            display: none
+    &.mob
+        @media #{ $smallup}
+            display: none
+
+.dark-banner
+    min-height: 500px
+    background-color: $primarycolor
+    position: relative
+    @media #{ $smalldown}
+        min-height: 300px
+    div
+        z-index: 1
+        position: relative
+    &.small
+        min-height: 350px
+    img
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+    

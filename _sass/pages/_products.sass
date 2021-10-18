@@ -1,0 +1,477 @@
+.page-intro
+    height: 300px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+.breadcrumb
+    li
+        display: inline-block
+        @extend .text-small-auto
+        &:after
+            content: "/"
+        &:last-child:after
+            display: none
+        a
+            @extend .link
+
+.product-image
+    width: 100%
+    padding-top: 83%
+    // background-color: $graycolor
+    position: relative
+    margin-bottom: 20px
+    img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+.product-slider
+    &__ctrl
+        li
+            width: 25%
+            padding: 0 20px
+
+            img
+                width: 100%
+                border: 1px solid transparent
+                border-radius: 5px
+                overflow: hidden
+            &.uk-active img
+                border: 1px solid $primarycolor
+
+
+.section
+    @extend .width-auto-fill
+    margin-bottom: 190px
+    @media #{ $largeup}
+        display: flex
+        align-items: normal
+        position: relative
+        flex-wrap: wrap
+    &__container
+        flex: 1
+        // margin-bottom: 190px
+    .search
+        margin-bottom: 80px
+        @media #{ $smallup}
+            margin-bottom: 50px
+        @media #{ $xxlargeup}
+            margin-bottom: 80px
+    &__list
+        // margin-bottom: 50px
+        padding-top: 50px
+        &:first-child
+            margin-top: -50px
+        @media #{ $smalldown}
+            padding-top: 130px
+            &:first-child
+                margin-top: -130px
+
+.side-container
+    width: 100%
+    margin-right: 40px
+    display: flex
+    align-self: flex-start
+    overflow: auto
+    position: sticky
+    background-color: #fff
+    @media #{ $xlargeup}
+        top: 50px
+        flex-direction: column
+        max-height: calc(100vh - 80px)
+        width: 330px
+    @media #{ $xlargedown}
+        margin-right: 0
+        top: 0px
+        z-index: 5
+        padding-top: 20px
+        padding-bottom: 20px
+    @media #{ $smalldown}
+        top: 68px
+        padding-top: 10px
+        padding-bottom: 10px
+        margin-left: -20px
+        margin-right: -20px
+        padding-left: 20px
+        width: 100vw
+        display: none
+
+        // padding: 56px 
+
+.filter-nav
+    background-color: $graycolor
+    width: 100%
+    // margin-right: 25px
+    border-radius: 5px
+    padding: 30px
+    position: sticky
+    top: 0px
+    bottom: 0px
+    overflow: auto
+    max-height: calc( 100vh - 0px )
+    &__wrapper
+        // display: none
+        @media #{ $largeup}
+            display: block
+    @media #{ $smallup}
+        // width: 360px
+        // margin-right: 25px
+        padding: 45px 30px
+    @media #{ $xxlargeup}
+    //     width: 400px
+    //     margin-right: 25px
+        padding: 56px
+
+    &::-webkit-scrollbar
+        width: 5px
+        height: 0px
+        opacity: 0
+
+    &::-webkit-scrollbar
+        width: 5px
+        height: 0px
+        // opacity: 0
+
+    &::-webkit-scrollbar-track
+        box-shadow: none
+        border-radius: 10px
+    
+    // /* Handle */
+    &::-webkit-scrollbar-thumb
+        // background: red
+        border-radius: 10px
+        opacity: 0
+        
+
+    // // /* Handle on hover */
+    &::-webkit-scrollbar-thumb
+        background: lighten($primarycolor, 55%)
+        opacity: 0
+        display: none
+    
+    &:hover
+        &::-webkit-scrollbar-thumb
+            display: block
+    &__controller
+        display: flex
+        align-items: center
+        background: url("/uploads/svg/menu-tip.svg") no-repeat
+        background-position: calc(100% - 20px) 50%
+        background-size: 16px 10px
+        // padding: 20px
+        background-color: $graycolor
+        width: 100%
+        // margin-bottom: 30px
+        @media #{ $smallup}
+            margin-right: 30px
+            width: 120px
+        @media #{ $largeup}
+            display: none
+
+.side-nav
+    @media #{ $xlargedown}
+        display: flex
+        align-items: center
+        // flex-wrap: wrap
+    li
+        @media #{ $xlargeup}
+            margin-bottom: 15px
+        @media #{ $xlargedown}
+            margin-right: 20px
+    a
+        display: flex
+        align-items: center
+        height: 90px
+        background-color: $graycolor
+        padding: 0px 24px
+        @extend .text-normal-auto
+        border-radius: 5px
+        position: relative
+        @media #{ $xlargedown}
+            height: 50px
+            padding: 0px 14px
+            padding-right: 70px
+            white-space: nowrap
+        @media #{ $smalldown}
+            height: 36px
+            padding-right: 50px
+        &:hover
+            background-color: lighten($primarycolor, 40%)
+        img
+            position: absolute
+            right: 0
+            top: 0
+            height: 100%
+            object-fit: contain
+        &.is-active
+            background-color: $primarycolor
+            color: #ffffff
+            font-weight: 500
+
+.guildline-area
+    width: 100%
+    padding-top: 60%
+    background: $codegray
+
+.star-rating
+    display: flex
+    svg
+        @extend .square--20
+        margin-right: 5px
+
+
+.capsule-tab
+    display: inline-flex
+    align-items: center
+    border: $borderline
+    border-radius: 5px
+    overflow: hidden
+    a
+        @extend .text-medium-auto
+        padding: 10px 20px
+        display: inline-flex
+        align-items: center
+        height: 52px
+    .uk-active
+        a
+            background-color: $primarycolor
+            color: #ffffff
+
+.dropdown
+    padding: 0
+    box-shadow: 0px 8px 64px rgba(29, 30, 115, 0.2)
+    overflow: hidden
+    border-radius: 10px
+    width: calc( 100vw - 40px )
+    max-width: 390px
+    color: $primarycolor
+    &__head
+        padding: 24px 30px
+        background-color: $graycolor
+    &__divider
+        border-top: $borderline
+        border-bottom: $borderline
+        border-top-style: dashed
+        border-bottom-style: dashed
+        padding: 20px 0
+    td
+        border-bottom: $borderline
+        padding: 20px 0
+    tr:last-child td
+        border-bottom: none
+    thead
+        display: none !important
+    .item-name
+        padding: 0 20px
+        width: 100%
+    .item-image
+        img
+            width: 56px
+            height: 56px
+            object-fit: contain
+            @media #{ $smallup}
+                width: 80px
+                height: 80px
+    .item-price, .item-decrement, .item-quantity, .item-decrement, .item-increment, .item-total
+        display: none
+    .simplecart-area
+        padding: 15px 15px
+        @media #{ $smallup}
+            padding: 25px 30px
+            padding-top: 0
+    .buildCart_items, .bulkCart_items
+        max-height: calc(100vh - 370px)
+        overflow: auto
+            
+.deleteIcon
+    display: inline-block
+    background: url("/uploads/svg/delete.svg") no-repeat
+    background-position: center center
+    background-size: 16px 18px
+    width: 24px
+    height: 20px
+
+.product-modal
+    @media #{ $mediumup}
+        align-items: flex-start
+        flex-wrap: wrap
+        display: flex
+
+    &__image
+        // max-height: 300px
+        // padding-top: 100%
+        margin-right: 10%
+        // margin-bottom: 30px
+        position: relative
+        @media #{ $smalldown}
+            margin-right: auto
+            margin-left: auto
+        @media #{ $mediumup}
+            width: 40%
+        img
+            // position: absolute
+            // left: 0
+            // top: 0
+            width: 100%
+            height: 100%
+            object-fit: contain
+            
+    &__content
+        flex: 1
+        .content p
+            line-height: normal
+            margin-bottom: 15px
+    &__color
+        padding-bottom: 20px
+        border-bottom: $borderline
+        margin-bottom: 20px
+        > div
+            display: inline-block
+            width: 32px
+            height: 32px
+            border-radius: 50%
+            margin-right: 15px
+            border: $borderline
+            &.item_color
+                border-color: $primarycolor
+    &__slider-ctrl
+        li
+            width: 25%
+            padding-left: 10px
+            padding-right: 10px
+            height: 60px
+            max-height: 60px
+            // margin-bottom: 20px
+            a
+                display: inline-block
+                width: 100%
+                height: 100%
+            &.uk-active
+                // border: 1px solid  $primarycolor
+                // border-radius: 5px
+    &__slider
+        margin-bottom: 40px
+        li
+            width: 100%
+            padding: 0 20px
+            img
+                max-height: 300px
+                @media #{ $mediumup}
+                    max-height: 350px
+        &-arrow
+            position: relative
+            a
+                display: inline-block
+                position: absolute
+                bottom: 25px
+                &.to-right
+                    right: 0
+
+.summary-box
+    background-color: $graycolor
+    padding: 15px
+    border-radius: 5px
+    margin-left: auto
+    margin-bottom: 50px
+    @media #{ $largeup}
+        max-width: 500px
+    @media #{ $smallup}
+        padding: 30px
+    tbody tr
+        @media #{ $smalldown}
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+    .item-image
+        img
+            width: 40px
+            height: 40px
+            @media #{ $smallup}
+                width: 64px
+                height: 64px
+    .item-name
+        width: 100%
+        padding: 0 20px
+        @media #{ $smalldown}
+            width: calc( 100% - 40px )
+    .item-remove
+        // display: none
+        padding-left: 20px
+        @media #{ $smalldown}
+            text-align: right
+            flex: 1
+    thead
+        display: none !important
+    tr td
+        padding: 10px 0
+    .item-increment, .item-decrement
+        a
+            display: inline-block  
+    .item-quantity
+        padding: 0 10px
+        width: 20px
+        text-align: center
+        @media #{ $smalldown}
+            width: auto
+            padding: 10px
+    .hide-in-checkout
+        display: none
+.minusIcon, .plusIcon
+    display: inline-flex
+    width: 32px
+    height: 32px
+    border: $borderline
+    border-radius: 5px
+    &:hover
+        border-color: $primarycolor
+    
+
+
+.plusIcon
+    background: url("/uploads/svg/plus.svg") no-repeat
+    background-position: center center
+    background-size: 16px 18px
+    background-color: $primarycolor
+    // &::after
+    //     content: '+'
+.minusIcon
+    background: url("/uploads/svg/minus.svg") no-repeat
+    background-position: center center
+    background-size: 16px
+    background-color: #fff
+
+.product-grid
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+    @media #{ $smallup}
+        grid-gap: 30px
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+    @media #{ $largeup}
+        grid-gap: 30px
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+    @media #{ $smalldown}
+        .to-hide
+            display: none
+
+
+.empty-state
+    width: 100%
+    padding: 50px 20px
+    
+.dropdown_close
+    position: absolute
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: #E9048B
+    left: -40px
+    top: 0
+    box-shadow: 0px 5px 24px rgba(47, 48, 106, 0.2)
+    display: inline-flex
+    align-items: center
+    justify-content: center

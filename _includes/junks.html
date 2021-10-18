@@ -1,0 +1,369 @@
+
+<section class="">
+    <div class="banner width-auto-fill">
+        <div class="banner__content">
+            <p class="banner__text mb-30 caps">Good Morning</p>
+            <h1 class="banner__header ">What can Wii help you with?</h1>
+            <div class="banner__input search">
+                <input class="input" placeholder="Business Cards, Brochures, Rollup Banners..." type="search">
+                <div class="search--dropdown" uk-dropdown="mode: click; boundary: .search; boundary-align: true; pos: bottom-left" class="">
+                    
+                    <a class="banner--search-list" href="">
+                        <img src="" alt="">
+                        <div>
+                            <h4 class="text-medium-auto co-primary fw-medium">Mini Business Cards</h4>
+                            <p class="text-small-auto co-primary">Starting Price: ₦ 1,999 / 50 pieces</p>
+                        </div>
+                    </a>
+
+                    <a class="banner--search-list" href="">
+                        <img src="" alt="">
+                        <div>
+                            <h4 class="text-medium-auto co-primary fw-medium">Mini Business Cards</h4>
+                            <p class="text-small-auto co-primary">Starting Price: ₦ 1,999 / 50 pieces</p>
+                        </div>
+                    </a>
+                      
+                    <a class="mt-20 arrow" href="">View More</a>
+                </div>
+                <button class="search__btn">
+                    <svg class="">
+                        <use xlink:href="/uploads/icon-sprite.svg#search-icon"></use>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+        
+        <img class="banner__image" src="/uploads/assets/home-banner.jpg" alt="">
+        
+    </div>
+</section>
+
+
+<div class="width-auto-fill">
+    <div class="banner secondary">
+        <div class="banner__content">
+            <h4 class="font-medium-auto co-primary mb-40 tx-c">Get a feel of Wii</h4>
+            <div>
+                <a class="btn btn--standard" href="">Order a free sample pack</a>
+            </div>
+        </div>
+    
+        <img class="banner__image" src="/uploads/assets/footer-banner.jpg" alt="">
+    </div>
+</div>
+
+
+<section class="py-80 bg-gray">
+    <div class="width-auto-fill tx-c">
+        <div class="sub-header mb-40">
+            <h2 class="font-medium-auto co-primary">Trusted by some of Africa’s fastest growing brands</h2>
+            <p class="text-normal-auto co-codegray">Join the list of innovative and forward-thinking organizations we work with.</p>
+        </div>
+
+        <div class="brand-list">
+            <img src="/uploads/brands/aella.png" alt="">
+            <img src="/uploads/brands/bamboo.png" alt="">
+            <img src="/uploads/brands/cowrywise.png" alt="">
+            <img src="/uploads/brands/eyowo.png" alt="">
+            <img src="/uploads/brands/farmforte.png" alt="">
+            <img src="/uploads/brands/flutterwave.png" alt="">
+            <img src="/uploads/brands/gokada.png" alt="">
+            <img src="/uploads/brands/gradely.png" alt="">
+            <img src="/uploads/brands/instadeep.png" alt="">
+            <img src="/uploads/brands/kuda_bank.png" alt="">
+            <img src="/uploads/brands/paystack.png" alt="">
+            <img src="/uploads/brands/piggyvest.png" alt="">
+            <img src="/uploads/brands/rise.png" alt="">
+            <img src="/uploads/brands/schoolable.png" alt="">
+            <img src="/uploads/brands/send.png" alt="">
+            <img src="/uploads/brands/thrive_agric.png" alt="">
+            <img src="/uploads/brands/truppr.png" alt="">
+        </div>
+
+        <a class="btn btn--secondary" href="">View Customer Stories</a>
+    </div>
+</section>
+
+<section class="newsletter">
+    <div class="newsletter__content">
+        <h4>Sign up for business tips, inspiration and exclusive discounts</h4>
+        <div class="newsletter__input">
+            <input class="input" placeholder="Your e-mail address" type="text">
+            <button class="btn btn--standard">Subscribe</button>
+        </div>
+    </div>
+</section>
+
+
+<div class="tx-c py-50 mb-30">
+    <a class="btn btn--secondary" href="">Load More</a>
+</div>
+
+<div class="flx-center-space-wrap border-bottom pb-20 mb-25">
+    <h2 class="font-medium-auto m-0">Clothing & Apparel</h2>
+</div>
+{% assign card = site.data.cards.business-stationary %}
+{% include components/cards.html %}
+<div class="tx-c py-50 mb-30">
+    <a class="btn btn--secondary" href="">Load More Categories</a>
+</div>
+
+
+<!-- <div class="page-intro">
+        <ul class="breadcrumb mb-10">
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">All Products</a>
+            </li>
+        </ul>
+        <h2 class="font-bigger-auto">Shop</h2>
+    </div> -->
+
+
+<!-- <div class="search">
+                <input class="input" placeholder="Business Cards, Brochures, Rollup Banners..." type="text">
+                <button class="search__btn">
+                    <svg class="">
+                        <use xlink:href="/uploads/icon-sprite.svg#search-icon"></use>
+                    </svg>
+                </button>
+            </div> -->
+
+            
+<!-- <a class="flx-center as-link" href="">Clear Search
+                    <svg class="square--20 ml-10">
+                        <use xlink:href="/uploads/icon-sprite.svg#close-icon"></use>
+                    </svg>
+                </a> -->
+
+
+                <div class="wrapper--x py-50">
+    
+                    <section class="width-auto multi-display__container al-i-fs">
+                        <div class="multi-display__content">
+                            <div class="product-image">
+                                <img class="" src="" alt="">
+                            </div>
+                            <a href="" data-uk-toggle="target: #productSpec;" class="selector__box link-to d-flx">
+                                <img class="size--w28 mr-20" src="/uploads/svg/measures.svg" alt="">
+                                <div>
+                                    <p class="fw-medium text-big-auto">View Product Specifications</p>
+                                    <span class="text">Materials, bleeds, margins, etc.</span>
+                                </div>
+                            </a>
+                            {% assign modal-case = "productSpec" %}
+                            {% assign modal-header = "Size guide" %}
+                            {% assign modal-size = "small" %}
+                            {% include components/modal.html modal= modal-case %}
+                        </div>
+                        <div class="multi-display__content">
+                            {% assign list = site.data.list.breadcrumb-nav %}
+                            {% include components/breadcrumb.html %}
+                
+                            <div class="border-bottom pb-30 mb-30">
+                                <h2 class="text-bigger-auto mb-10 co-secondary">{{ page.title }}</h2>
+                                <p class="text-normal-auto co-primary mb-5 mt-5">Starting from <span class="fw-medium">₦7,499 / 100 pieces</span></p>
+                                <div class="flx-center-wrap my-15">
+                                    <div class="star-rating co-primary mr-20">
+                                        <svg class="">
+                                            <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                        </svg>
+                                        <svg class="">
+                                            <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                        </svg>
+                                        <svg class="">
+                                            <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                        </svg>
+                                        <svg class="">
+                                            <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                        </svg>
+                                        <svg class="no-star">
+                                            <use xlink:href="/uploads/icon-sprite.svg#no-star-icon"></use>
+                                        </svg>
+                                    </div>
+                                    <a class="underline as-link" href="">25 reviews</a>
+                                </div>
+                            </div>
+                            <div class="border-bottom pb-10 mb-30">
+                                <h3 class="text-big-auto co-primary mb-15">Command attention and Motivate opens </h3>
+                                <div class="content co-primary">
+                                    <p>Keep confidential documents private with our custom envelopes designed to suit your business needs. Show your clients and customers that detail, credibility and reputation are a priority.</p>
+                                    <p>Sometimes the smallest details produce the largest results. Ever heard the saying, “Drops of water make a mighty ocean”? Well, so do these tiny details. They sum up to define your brand's reputation.</p>
+                                </div>
+                            </div>
+                
+                            {% include product-options.html %}
+                
+                            <div class="mb-40">
+                                <h2 class="text-big-auto co-primary mb-15">How would you like to design your envelopes?</h2>
+                                <a class="selector__box d-flx has-drop-icon" href="">
+                                    <img class="size--w28 mr-30" src="/uploads/svg/truck.svg" alt="">
+                                    <div>
+                                        <p class="title">Standard Delivery</p>
+                                        <span class="text">5-7 Business Days</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+                <section class="wrapper--x py-80 bg-gray">
+                    <div class="multi-display__container width-auto">
+                        <div class="multi-display__content maxwidth-550">
+                            <h4 class="font-medium-auto co-primary">Business Cards Design Guidelines</h4>
+                            <p class="text-normal-auto co-primary">Wii value the quality of print we deliver and hence to improve the quality of print you get, we need you to do some basic human being stuff that should fit about five lines. You can download guidelines for each software below but this length. That’s it</p>
+                            <ul class="flx-space-wrap-auto tx-c mt-30">
+                                <li>
+                                    <a href="">
+                                        <svg class="square--28 mb-10 co-codegray" width="27" height="27">
+                                            <use xlink:href="/uploads/icon-sprite.svg#download-icon"></use>
+                                        </svg>
+                                        <p class="text-medium-auto co-codegray">PDF</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <svg class="square--28 mb-10 co-orange" width="27" height="27">
+                                            <use xlink:href="/uploads/icon-sprite.svg#download-icon"></use>
+                                        </svg>
+                                        <p class="text-medium-auto co-codegray">Illustrator</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <svg class="square--28 mb-10 co-blue" width="27" height="27">
+                                            <use xlink:href="/uploads/icon-sprite.svg#download-icon"></use>
+                                        </svg>
+                                        <p class="text-medium-auto co-codegray">Photoshop</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <svg class="square--28 mb-10  co-green" width="27" height="27">
+                                            <use xlink:href="/uploads/icon-sprite.svg#download-icon"></use>
+                                        </svg>
+                                        <p class="text-medium-auto co-codegray">CorelDraw</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="multi-display__content">
+                            <div class="guildline-area"></div>
+                            <div class="d-flx-space-btm">
+                                <p>View:</p>
+                                <div class="d-flx mt-40">
+                                    <span class="mr-20">Bleed Area</span>
+                                    <span class="mr-20">Trim Area</span>
+                                    <span class="mr-20">Safe Area</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="wrapper--x py-80">
+                    <div class="maxwidth-750 mx-auto">
+                        <h4 class="font-medium-auto mb-30 co-primary tx-c">Frequently Asked Questions</h4>
+                        <ul class="accordion" uk-accordion>
+                            <li>
+                                <a class="uk-accordion-title text-normal-auto fw-medium co-codegray" href="#">What paper are my luxury business cards printed on?</a>
+                                <div class="content uk-accordion-content">
+                                    <p>Wii value the quality of print we deliver and hence to improve the quality of print you get, we need you to do some basic human being stuff that should fit about five lines. You can download guidelines for each software below but this length. That’s almost about it. Voila!</p>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <a class="uk-accordion-title text-normal-auto fw-medium co-codegray" href="#">What paper are my luxury business cards printed on?</a>
+                                <div class="content uk-accordion-content">
+                                    <p>Wii value the quality of print we deliver and hence to improve the quality of print you get, we need you to do some basic human being stuff that should fit about five lines. You can download guidelines for each software below but this length. That’s almost about it. Voila!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="wrapper--x mb-60">
+                    <ul class="width-auto-fill grid-wrapper space-30 col-320">
+                        <li class="card-square">
+                            <img class="card-square__img" src="" alt="">
+                        </li>
+                        <li class="card-square">
+                            <div class="card-square__content">
+                                <h4 class="font-medium-auto co-white">Browse our inspiration gallery and use any of our designs as templates for free!</h4>
+                                <div>
+                                    <a class="btn btn--secondary" href="">Get Inspired</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-square">
+                            <img class="card-square__img" src="" alt="">
+                        </li>
+                        <li class="card-square">
+                            <img class="card-square__img" src="" alt="">
+                        </li>
+                        <li class="card-square">
+                            <img class="card-square__img" src="" alt="">
+                        </li>
+                        <li class="card-square">
+                            <img class="card-square__img" src="" alt="">
+                        </li>
+                
+                    </ul>
+                </section>
+                
+                <section class="wrapper--x bg-gray py-80">
+                    <div class="width-auto-fill">
+                        <div class="flx-space-wrap-auto mb-50">
+                            <div>
+                                <h5 class="font-medium-auto co-primary mb-10">Customer Reviews</h5>
+                                <p class="text-normal-auto">See what our customers say about the quality of Wii Envelopes.</p>
+                            </div>
+                            <div class="my-10">
+                                <a class="btn btn--secondary" href="">Write New Review</a>
+                            </div>
+                        </div>
+                
+                        <ul class="grid-wrapper space-30 col-300-alt mb-70">
+                            {% for entry in  site.data.cards.popular-products %}
+                            <li class="plain-card">
+                                <h6 class="text-medium-auto co-primary mb-5">Jemima Assim-Ita</h6>
+                                <p class="text-small-auto mb-30">Lagos, Nigeria</p>
+                                <div class="d-flx star-rating co-yellow mb-20">
+                                    <svg class="">
+                                        <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                    </svg>
+                                    <svg class="">
+                                        <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                    </svg>
+                                    <svg class="">
+                                        <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                    </svg>
+                                    <svg class="">
+                                        <use xlink:href="/uploads/icon-sprite.svg#star-icon"></use>
+                                    </svg>
+                                    <svg class="no-star">
+                                        <use xlink:href="/uploads/icon-sprite.svg#no-star-icon"></use>
+                                    </svg>
+                                </div>
+                                <div class="plain-card__content">
+                                    <h6 class="text-medium-auto co-primary mb-5">The process with Wii was simple and their quality is second to none.</h6>
+                                    <p class="">There are several reasons for the slide, but they’re all connected to business closures forced by...</p>
+                                </div>
+                                <div>
+                                    <a class="link fw-medium" href="">Continue Reading</a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+                
+                        <div class="tx-c">
+                            <a class="btn btn--standard" href="">View More Reviews</a>
+                        </div>
+                    </div>
+                </section>

@@ -1,0 +1,107 @@
+<div id="{{ modal-case }}" data-uk-modal class="modal">
+    <div class="uk-modal-dialog modal--body {{ modal-size }}">
+        <div class="modal--head">
+            <div class="modal--head__wrapper">
+                <h2 class="font-medium-auto m-0">{{ modal-header }}</h2>
+                <button class="uk-modal-close modal--head__close" type="button">
+                    <svg class="square--32">
+                        <use xlink:href="/uploads/icon-sprite.svg#modal-close-icon"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+{%- case include.modal -%}
+
+{%- when 'productSpec' -%}
+        <div class="modal--content">
+            <div class="flx-center-space-wrap mb-20">
+                <ul uk-switcher=".size-guide" class="capsule-tab">
+                    <li>
+                        <a href="#">Inches</a>
+                    </li>
+                    <li>
+                        <a href="#">CM</a>
+                    </li>
+                </ul>
+
+                <a class="link--italic" href="">
+                    <svg class="square--20 mr-10">
+                        <use xlink:href="/uploads/icon-sprite.svg#question-icon"></use>
+                    </svg>
+                    Sizing Information</a>
+            </div>
+            <ul class="size-guide uk-switcher">
+                <li>
+                    <table class="size-table">
+                        <thead class="">
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest</th>
+                                <th>Length</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Small</td>
+                                <td>92</td>
+                                <td>71</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                <td>102</td>
+                                <td>74</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                <td>112</td>
+                                <td>76</td>
+                            </tr>
+                            <tr>
+                                <td>X-large</td>
+                                <td>122</td>
+                                <td>79</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    Tab-2
+                </li>
+            </ul>
+        </div>
+        <div class="modal--foot bg-gray">
+            <p class="text-normal-auto">Returns are free and easy. Wii believe you need to be happy. Wii all do.</p>
+        </div>
+
+{%- when 'preview' -%}
+        <div class="modal--content">
+            <div class="mb-25">
+                <input class="input as-name" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+            </div>
+            
+            <div class="mb-25">
+                <input class="input as-number" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+            </div>
+
+            <div class="mb-25">
+                <input class="input as-email" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+            </div>
+            
+            <div class="mb-25">
+                <input class="input as-address" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+            </div>
+
+            <div class="mb-25">
+                <input class="input as-upload" placeholder="Search Designs: Professional, Fun, Simple..." type="text">
+            </div>
+
+            <div class="tx-c">
+                <a class="btn btn--standard" href="">Personalize Preview</a>
+            </div>
+        </div>
+
+
+{%- endcase -%}
+
+    </div>
+</div>

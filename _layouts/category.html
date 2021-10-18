@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<section>
+    <div class="banner">
+        <div class="banner__content">
+            <h1 class="banner__header mb-10">{{ page.banner_title }}</h1>
+            <p class="banner__content--text">{{ page.banner_summary }}</p>
+        </div>
+        <img  class="banner__image" src="{{ page.banner_image }}" alt="">
+    </div>
+</section>
+
+
+<section class="sub-nav">
+    <ul>
+        {% for entry in page.sub_nav %}
+        <li>
+            <a href="">{{ entry.title}}</a>
+        </li>
+        {% endfor %}
+        <!-- <li>
+            <a href="">Shop Business Cards by Size</a>
+        </li>
+        <li>
+            <a href="">Shop Business Cards by Finish</a>
+        </li> -->
+    </ul>
+</section>
+
+{% if page.sub_banner %}
+<div class="width-auto-fill tx-c py-80">
+    <div class="banner secondary">
+        <img  class="banner__image" src="{{ page.sub_banner_image }}" alt="">
+
+        <div class="banner__content">
+            <h4 class="font-big-auto co-white mb-40">You can’t go wrong with <br> our Premium T-Shirts</h4>
+            <div>
+                <a class="btn btn--standard" href="">Start Customizing</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endif %}
+
+<div class="mb-50">
+    {% for entry in page.product-lists %}
+    <section class="py-80 {% if forloop.index == 2 %}bg-gray{% elsif forloop.length == 1 %}bg-gray{% endif %}">
+        <div class="sub-header mb-50">
+            <h2 class="font-medium-auto co-primary">{{ entry.title }}</h2>
+            <p class="text-normal-auto co-codegray">{{ entry.desc }}</p>
+        </div>
+    
+        <div class="width-auto wrapper--x">
+            {% assign card = entry.card-list %}
+            {% assign cardGrid = 'col-300 space-30' %}
+            {% include components/cards.html %}
+        </div>
+    </section>
+    {% endfor %}
+</div>
+
+<!-- forloop.index -->
